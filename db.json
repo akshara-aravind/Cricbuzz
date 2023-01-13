@@ -1,0 +1,132 @@
+{
+    "Users": [
+        {
+            "id": 1,
+            "email": "rithikapullela@gmail.com"
+        },
+        {
+            "id": 2,
+            "email": "akshara@gmail.com"
+        },
+        {
+            "id": 3,
+            "email": "sai@gmail.com"
+        }
+    ],
+    "LatestNews": [
+        {
+            "id": 1,
+            "news": "Capsey named in England squad for Women's T20 World Cup",
+            "image": "https://www.cricbuzz.com/a/img/v1/595x396/i1/c252889/we-hope-alice-is-fit-enough.jpg",
+            "time": "2h ago"
+        },
+        {
+            "id": 2,
+            "news": "Injured Matt Henry out of ODIs against Pakistan, India",
+            "image": "https://www.cricbuzz.com/a/img/v1/595x396/i1/c253025/henry-is-out-of-both-the-serie.jpg",
+            "time": "5h ago"
+        }
+    ],
+    "Comments": [
+        {
+            "id": 1,
+            "LatestNewId": 1,
+            "info": {
+                "UserId": 1,
+                "text": "my comment"
+            }
+        }
+    ],
+    "AllMatches": [
+        {
+            "id": 1,
+            "name": "India vs Sri Lanka",
+            "type": "International",
+            "match-type": "2nd T20l"
+        },
+        {
+            "id": 2,
+            "name": "Australia vs South Africa",
+            "type": "International",
+            "match-type": "3rd Test"
+        },
+        {
+            "id": 3,
+            "name": "Hobart Hurricanes vs Melbourne Renegades",
+            "type": "T20 LEAGUE",
+            "match-type": "32nd Match"
+        },
+        {
+            "id": 4,
+            "name": "Brisbane Heat vs Perth Scorchers",
+            "type": "T20 LEAGUE",
+            "match-type": "33rd Match"
+        },
+        {
+            "id": 5,
+            "name": "Assam vs Mumbai",
+            "type": "DOMESTIC",
+            "match-type": " Elite Group B"
+        },
+        {
+            "id": 6,
+            "name": "Chhattisgarh vs Jharkhand",
+            "type": "DOMESTIC",
+            "match-type": "Elite Group C"
+        }
+    ],
+    "LiveNowMatches": [
+        {
+            "id": 1,
+            "AllMatchId": 2
+        },
+        {
+            "id": 2,
+            "AllMatchId": 3
+        }
+    ],
+    "TodayMatches": [
+        {
+            "id": 1,
+            "AllMatchId": 2
+        },
+        {
+            "id": 2,
+            "AllMatchId": 3
+        },
+        {
+            "id": 3,
+            "AllMatchId": 5
+        },
+        {
+            "id": 4,
+            "AllMatchId": 6
+        }
+    ],
+    "Matches": [
+        {
+            "id": 1,
+            "title": "NZ vs PAK",
+            "status": "Live",
+            "image": "https://cdn.zeebiz.com/sites/default/files/styles/zeebiz_850x478/public/2022/11/08/209462-new-zealand-vs-pakistan-t20-world-cup-2022-semifinal-date-timing-squad-sydney-cricket-ground-weather-forecast.jpg?itok=z7T4LmQR&c=4d942a74b30a9cd43bb1639dd6002b86",
+            "headLines":"Clinical New Zealand take early series lead",
+            "indetail":"Pakistan finished strong with Dasun Shanaka's century but New Zealand remained in control and eventually won by 67 runs"
+        },
+        {
+            "id": 2,
+            "title": "KLT vs CGC",
+            "status": "Complete",
+            "image": "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2020/01/04/888047-chattogram-challengers-vs-khulna-tigers.jpg",
+            "headLines":"Todd Murphy handed maiden call-up for Test tour",
+            "indetail":"Cameron Green and Mitchell Starc's inclusion is contingent on their successful returns from their respective finger injuries"
+        },
+        {
+            "id": 3,
+            "title": "MLS vs HBH",
+            "status": "Preview",
+            "image":"https://www.dreamteamcric.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2018/01/MLS-vs-HBH.jpg.webp",
+            "headLines":"Fog lifts from MLS cricket",
+            "indetail":"The tournament opener of SA20 was the first time in more than three years that Newlands had seen anything like a sell-out crowd"
+        }
+    ]
+}

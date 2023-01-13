@@ -1,0 +1,307 @@
+.CricbuzzMainPage {
+  padding: 1% 24%;
+  background: #E3E6E3;
+  border: 1px solid black;
+  font-size: 15px;
+}
+
+.Header {
+  background-color: #009270;
+  display: flex;
+  height: 48px;
+}
+
+.Logo {
+  width: 10%;
+  padding: 10px 18px 10px 20px;
+}
+
+.HeaderItems {
+  display: flex;
+  color: #fff;
+}
+
+.HeaderEachItem {
+  padding: 16px 6px 11px;
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.HeaderEachItem:hover {
+  background-color: #01795d;
+}
+
+.EachItem {
+  padding: 16px 6px 13px;
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 0px;
+}
+
+.EachItem:hover {
+  background-color: #01795d;
+}
+
+.CricBuzzBtn {
+  margin: 8px 0px;
+  padding: 0px 14px;
+  background: #fff;
+  border-radius: 18px;
+  border: 0;
+  color: #4a4a4a;
+}
+
+.Search {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  color: white;
+  padding: 16px 6px 11px 20px;
+}
+
+.User {
+  padding: 16px 6px 11px 15px;
+  color: #fff;
+}
+
+.SubNav {
+  background-color: #4a4a4a;
+  padding: 0px;
+  color: #fff;
+  height: 40px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.DropDown {
+  background-color: aqua;
+}
+
+.FeaturedMatches {
+  width: 100%;
+}
+
+.HomePage {
+  border-top: 6px solid #E3E6E3;
+  /* border-bottom: 6px solid #E3E6E3; */
+  background-color: #fff;
+  padding-left: 20px;
+}
+
+.FeaturedMatchesTitle {
+  color: #009270;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
+}
+
+.FeaturedMatch {
+  width: 100%;
+  line-height: 30px;
+  box-shadow: 2px 9px rgb(226, 224, 224);
+  margin-right: 30px;
+}
+
+.rec.rec-arrow {
+  background-color: #009270;
+  color: #fff;
+  font-size: small;
+}
+
+.rec.rec-arrow:hover {
+  background-color: #009270;
+}
+
+.rec.rec-arrow:disabled {
+  visibility: hidden;
+}
+
+button.rec-dot {
+  visibility: hidden;
+}
+
+.TimeOfMatch {
+  color: rgb(170, 21, 21);
+}
+
+.Matches {
+  padding: 9px 20px 0px 20px;
+  background-color: #262525;
+}
+
+.Matches:hover {
+  background-color: #4a4a4a;
+}
+
+.EachMatch {
+  padding: 9px 20px 0px 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.EachMatch:hover {
+  background-color: #262525;
+}
+
+.All {
+  padding: 5px 0px 0px 252px;
+  /* margin-left: 45%; */
+}
+
+.ToggleAll {
+  background-color: #4a4a4a;
+  border: 0px solid black;
+  padding: 5px 20px;
+  color: #fff;
+}
+
+.DisplayAll {
+  background-color: #4a4a4a;
+  position: fixed;
+
+}
+
+.HomePage2 {
+  border-top: 6px solid #E3E6E3;
+  /* border-bottom: 6px solid #E3E6E3; */
+
+  display: flex;
+}
+
+.LatestNews {
+  border-right: 6px solid #E3E6E3;
+  /* border: 2px solid black; */
+  width: 20%;
+  padding: 10px 10px 0px 20px;
+  line-height: 25px;
+  background-color: #fff;
+
+}
+
+.EachNews {
+  padding: 10px 0px;
+  box-shadow: 0px 1px rgb(226, 224, 224);
+}
+
+.NewsLink {
+  text-decoration: none;
+  color: black;
+}
+
+.NewsLink:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+.Feed {
+  width: 48%;
+  border-right: 6px solid #E3E6E3;
+  padding: 10px 10px 0px 10px;
+  background-color: #fff;
+}
+
+.FeaturedVideos {
+  width: 32%;
+  background-color: #fff;
+
+}
+
+.EachFeed img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.EachFeed {
+  padding: 20px 0px 20px 0px;
+  box-shadow: 0px 2px rgb(226, 224, 224);
+  line-height: 25px;
+  /* background-color: #fff; */
+
+}
+
+.EachFeed h2 {
+  font-size: 20px;
+}
+
+.Indetail {
+  color: #4a4a4a;
+}
+
+.FeedLink {
+  text-decoration: none;
+  color: #262525;
+}
+
+.EmptyOne {
+  border-bottom: 6px solid #E3E6E3;
+  padding: 0px;
+  margin: 0px;
+}
+
+.FeaturedVideosList {
+  padding: 10px 10px 0px 10px;
+}
+.EachFeaturedVideo{
+  padding: 15px 0px;
+}
+.EachFeaturedVideo h3{
+  padding: 0px 0px;
+  line-height: 25px;
+  font-size: 18px;
+  /* border: 2px solid black; */
+}
+.Footer{
+  /* text-align: center; */
+    background: #4a4a4a;
+    color: #fff;
+    display: flex;
+    padding: 30px 25% 10px 25%;
+    
+}
+.FooterLink{
+  text-decoration: none;
+  color:white;
+  line-height: 35px;
+  padding:10px 0px;
+  
+}
+.Footer ul{
+  list-style-type: none;
+padding: 0px;
+}
+
+.CricBuzzLogo{
+  width:25%;
+  /* border: 2px solid rgb(255, 254, 254); */
+}
+.CricBuzzLogo img{
+  height: 40px;
+   
+    width: 101px;
+}
+.MobileSite{
+  width:25%;
+  padding: 0px;
+  /* border: 2px solid rgb(255, 254, 254); */
+  
+}
+.FollowUs{
+  width:25%;
+  /* border: 2px solid rgb(255, 254, 254); */
+}
+.Company{
+  width:25%;
+  /* border: 2px solid rgb(255, 254, 254); */
+}
+.FooterText{
+  background: #4a4a4a;
+    color: rgb(186, 183, 183);
+    padding: 0px 25% 40px 25%;
+    word-spacing: 4px;
+    text-align: center;
+    font-size: 15px;
+
+}
