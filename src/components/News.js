@@ -86,9 +86,7 @@ export default function News() {
   ];
   return (
     <div >
-      <Dropdown menu={{
-        items
-      }}>
+      <Dropdown menu={{ items }}>
         <Link className='EachItem'>
           News<CaretDownOutlined />
         </Link>

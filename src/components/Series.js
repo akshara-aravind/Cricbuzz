@@ -16,14 +16,14 @@ export default function Series() {
     {
       label: (
         <Link >
-        South Africa tour of Australia, 2022-23
+          South Africa tour of Australia, 2022-23
         </Link>
       )
     },
     {
       label: (
         <Link >
-        New Zealand tour of Pakistan, 2022-23
+          New Zealand tour of Pakistan, 2022-23
         </Link>
       )
     },
@@ -37,44 +37,42 @@ export default function Series() {
     {
       label: (
         <Link >
-        Big Bash League 2022-23
+          Big Bash League 2022-23
         </Link>
       )
     },
     {
       label: (
         <Link >
-        SA20, 2023
+          SA20, 2023
         </Link>
       )
     },
     {
       label: (
         <Link >
-        Bangladesh Premier League 2023
+          Bangladesh Premier League 2023
         </Link>
       )
     },
     {
       label: (
         <Link >
-        International League T20, 2023
+          International League T20, 2023
         </Link>
       )
     },
     {
       label: (
-        <Link style={{color:'blue'}}>
-        All Series »
+        <Link style={{ color: 'blue' }}>
+          All Series »
         </Link>
       )
     }
   ];
   return (
     <div >
-      <Dropdown menu={{
-        items
-      }}>
+      <Dropdown menu={{ items }}>
         <Link className='EachItem'>
           Series<CaretDownOutlined />
         </Link>

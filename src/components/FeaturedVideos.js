@@ -34,11 +34,10 @@ export default function FeaturedVideos() {
                                     height="315"
                                     src={arr.image}
                                     title="Youtube Player"
-                                    frameborder="0"
                                     allowFullScreen
                                 />
                                 <h3>{arr.title}</h3>
-                                <div style={{color:'gray'}}>{arr.time}</div>
+                                <div style={{ color: 'gray' }}>{arr.time}</div>
                             </div>
                         ))
                     }
@@ -46,6 +45,5 @@ export default function FeaturedVideos() {
             </div>
             <div className="EmptyOne"><br /></div>
         </div>
-    )
-
+    );
 }

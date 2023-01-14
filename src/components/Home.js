@@ -52,7 +52,6 @@ export const Home = () => {
                 </div>
             </div>
             <HomePage />
-
         </div>
     );
 } 
