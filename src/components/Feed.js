@@ -14,16 +14,13 @@ export default function Feed() {
                 <div key={arr}>
                     {
                         data?.data.map((feed) => {
-                            return
-                            (
-                                <div key={feed.id} className="EachFeed">
-                                    <Link className="FeedLink">
-                                        <img src={feed.image} alt="is Loading" />
-                                        <h2>{feed.headLines}</h2>
-                                        <div className="Indetail"> {feed.indetail}</div>
-                                    </Link>
-                                </div>
-                            );
+                            return <div key={feed.id} className="EachFeed">
+                                <Link className="FeedLink">
+                                    <img src={feed.image} alt="is Loading" />
+                                    <h2>{feed.headLines}</h2>
+                                    <div className="Indetail"> {feed.indetail}</div>
+                                </Link>
+                            </div>
                         })
                     }
                 </div>

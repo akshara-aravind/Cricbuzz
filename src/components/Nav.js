@@ -7,10 +7,26 @@ import Rankings from './Rankings';
 import Videos from './Videos';
 import Teams from './Teams';
 import Series from './Series';
+import Dialog from "@material-ui/core/Dialog";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import Button from "@material-ui/core/Button";
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { SearchOutlined, UserOutlined } from '@ant-design/icons'
 
 export default function Nav() {
+    const [open, setOpen] = useState(false);
+
+    const handleClickToOpen = () => {
+        setOpen(true);
+    };
+
+    const handleToClose = () => {
+        setOpen(false);
+    };
     return (
         <div className='Header'>
             <div className='Logo'>
@@ -26,9 +42,24 @@ export default function Nav() {
                 <Videos />
                 <Rankings />
                 <More />
-                <button className='CricBuzzBtn'>Cricbuzz Plus</button>
+                <button className='CricBuzzBtn' onClick={handleClickToOpen}>Cricbuzz Plus</button>
                 <SearchOutlined className='Search' />
-                <UserOutlined className='User' />
+                <NavLink to='/login'><UserOutlined className='User' /></NavLink>
+                <Dialog open={open} onClose={handleToClose}>
+                    <DialogTitle>Subscription</DialogTitle>
+                    <DialogContent>
+                        <DialogContentText>
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={handleToClose} color="primary" autoFocus>
+                            Close
+                        </Button>
+                        <Button onClick={handleToClose} color="primary" autoFocus>
+                            Submit
+                        </Button>
+                    </DialogActions>
+                </Dialog>
             </div>
         </div>
     );

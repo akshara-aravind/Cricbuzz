@@ -13,18 +13,18 @@ export default function Footer() {
             <div className="MobileSite">
                <b>MOBILE SITE & APPS</b>
                <ul>
-                  <li><a className="FooterLink" href="https://m.cricbuzz.com/"><GlobalOutlined /> m.cricbuzz.com</a></li>
-                  <li><a className="FooterLink" href="https://play.google.com/store/apps/details?id=com.cricbuzz.android"><AndroidFilled />  Android</a></li>
-                  <li><a className="FooterLink" href="https://apps.apple.com/app/id360466413"><AppleFilled /> iOS</a></li>
+                  <li><a className="FooterLink" href="https://m.cricbuzz.com/" target="_blank"><GlobalOutlined /> m.cricbuzz.com</a></li>
+                  <li><a className="FooterLink" href="https://play.google.com/store/apps/details?id=com.cricbuzz.android" target="_blank"><AndroidFilled />  Android</a></li>
+                  <li><a className="FooterLink" href="https://apps.apple.com/app/id360466413" target="_blank"><AppleFilled /> iOS</a></li>
                </ul>
             </div>
             <div className="FollowUs">
                <b>FOLLOW US ON</b>
                <ul>
-                  <li><a className="FooterLink" href="https://www.facebook.com/cricbuzz"><FacebookFilled /> facebook</a> </li>
-                  <li><a className="FooterLink" href="https://twitter.com/cricbuzz"><TwitterOutlined /> twitter</a></li>
-                  <li><a className="FooterLink" href="https://www.youtube.com/channel/UCSRQXk5yErn4e14vN76upOw"><YoutubeFilled /> youtube</a></li>
-                  <li><a className="FooterLink" href="https://in.pinterest.com/cricbuzz/"><FilePptFilled /> Pinterest</a></li>
+                  <li><a className="FooterLink" href="https://www.facebook.com/cricbuzz" target="_blank"><FacebookFilled /> facebook</a> </li>
+                  <li><a className="FooterLink" href="https://twitter.com/cricbuzz" target="_blank"><TwitterOutlined /> twitter</a></li>
+                  <li><a className="FooterLink" href="https://www.youtube.com/channel/UCSRQXk5yErn4e14vN76upOw" target="_blank"><YoutubeFilled /> youtube</a></li>
+                  <li><a className="FooterLink" href="https://in.pinterest.com/cricbuzz/" target="_blank"><FilePptFilled /> Pinterest</a></li>
                </ul>
             </div>
             <div className="Company">

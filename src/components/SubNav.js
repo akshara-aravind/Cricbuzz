@@ -1,12 +1,12 @@
 import React from 'react'
 import axios from 'axios'
+import All from './All'
+import '../App.css'
 import { useQuery } from 'react-query'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons'
 import { Button } from 'antd'
-import All from './All'
-import '../App.css'
 
 const fetchMatches = () => {
   return axios.get('http://localhost:4000/Matches')
@@ -20,7 +20,8 @@ export default function SubNav() {
     setToggleall(!toggleall);
     if (all === 'ALL')
       setAll('CLOSE')
-    else setAll('ALL')
+    else
+      setAll('ALL')
   }
   return (
     <div className='SubNav'>
@@ -34,7 +35,12 @@ export default function SubNav() {
           </Link>
         )
       })}
-      <div className='All'><Button className='ToggleAll' onClick={handleOnClick}><b>{all}</b>{toggleall ? <CaretDownOutlined /> : <CaretUpOutlined />}</Button> </div>
+      <div className='All'>
+        <Button className='ToggleAll' onClick={handleOnClick}>
+          <b>{all}</b>
+          {toggleall ? <CaretDownOutlined /> : <CaretUpOutlined />}
+        </Button>
+      </div>
       {
         !toggleall && <All />
       }
