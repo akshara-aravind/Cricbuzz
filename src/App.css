@@ -1,5 +1,5 @@
 .CricbuzzMainPage {
-  padding: 1% 20%;
+  padding: 1% 16%;
   background: #E3E6E3;
   border: 1px solid black;
   font-size: 15px;
@@ -419,5 +419,54 @@ button.rec-dot {
 
 .LoginSubmit {
   background-color: #009270;
-  ;
+}
+
+.EachLatestNews {
+  margin-top: 6px;
+  background-color: #fff;
+  padding: 10px 30px;
+}
+.EachLatestNews h1{
+  text-align: center;
+}
+.EachLatestNews img{
+  padding: 0px 18%;
+}
+.EachLatestNews p {
+  line-height: 30px;
+  font-size: 20px;
+  word-spacing: 5px;
+}
+.comments{
+  display:flex;
+}
+.PostComment{
+  width:50%;
+  padding: 0px 0px;
+}
+.TextArea{
+  width:400%;
+  height: 100px;
+}
+.Submit{
+  background-color: #009270;
+  margin: 10px 0px;
+  color:white;
+}
+.ViewAllComments{
+  width:50%;
+  padding: 0px 0px 10px 650px;
+
+}
+.CommentBtn{
+  background-color: #009270;
+  padding: 3px 5px;
+  color:#fff;
+  border: 0px;
+}
+.ViewComments{
+  padding: 10px 0px;
+}
+.EachComment{
+  padding: 5px 0px;
 }

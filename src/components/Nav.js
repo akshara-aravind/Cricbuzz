@@ -45,10 +45,13 @@ export default function Nav() {
                 <button className='CricBuzzBtn' onClick={handleClickToOpen}>Cricbuzz Plus</button>
                 <SearchOutlined className='Search' />
                 <NavLink to='/login'><UserOutlined className='User' /></NavLink>
-                <Dialog open={open} onClose={handleToClose}>
-                    <DialogTitle>Subscription</DialogTitle>
+                <Dialog open={open} onClose={handleToClose} >
+                    <DialogTitle>
+                    The best of cricket for the greatest fan of Cricket
+                   </DialogTitle>
                     <DialogContent>
                         <DialogContentText>
+                        Get 15 Subscriptions with 1 Plan and save INR 10000!
                         </DialogContentText>
                     </DialogContent>
                     <DialogActions>
@@ -56,7 +59,7 @@ export default function Nav() {
                             Close
                         </Button>
                         <Button onClick={handleToClose} color="primary" autoFocus>
-                            Submit
+                            Subscribe
                         </Button>
                     </DialogActions>
                 </Dialog>

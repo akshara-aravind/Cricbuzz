@@ -37,7 +37,7 @@ const Login = () => {
                   setTimeout(() => {
                      // alert(JSON.stringify(values, null, 2));
                      navigate('/');
-                     console.log(values);
+                     // console.log(values);
                      setSubmitting(false);
                   }, 400);
                }}

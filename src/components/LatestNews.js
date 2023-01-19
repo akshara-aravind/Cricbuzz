@@ -19,7 +19,7 @@ export default function LatestNews() {
                     {data?.data.map(news => {
                         return (
                             <div key={news.id} className='EachNews'>
-                                <Link className="NewsLink">
+                                <Link className="NewsLink" to={`latestnews/${news.id}`}>
                                     {news.news}
                                 </Link>
                                 <div style={{ color: 'gray' }}>  {news.time}</div>
