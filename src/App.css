@@ -1,5 +1,5 @@
 .CricbuzzMainPage {
-  padding: 1% 15%;
+  padding: 1% 17%;
   background: #E3E6E3;
   border: 1px solid black;
   font-size: 15px;
@@ -166,7 +166,7 @@ button.rec-dot {
 }
 
 .All {
-  padding: 3px 0px 0px 300px;
+  padding: 3px 0px 0px 265px;
   /* margin-left: 45%; */
 }
 
@@ -426,47 +426,170 @@ button.rec-dot {
   background-color: #fff;
   padding: 10px 30px;
 }
-.EachLatestNews h1{
+
+.EachLatestNews h1 {
   text-align: center;
 }
-.EachLatestNews img{
+
+.EachLatestNews img {
   padding: 0px 18%;
 }
+
 .EachLatestNews p {
-  line-height: 30px;
-  font-size: 20px;
-  word-spacing: 5px;
+  line-height: 20px;
+  font-size: 15px;
+  word-spacing: 4px;
 }
-.comments{
-  display:flex;
+
+.comments {
+  display: flex;
 }
-.PostComment{
-  width:50%;
+
+.PostComment {
+  width: 50%;
   padding: 0px 0px;
 }
-.TextArea{
-  width:400%;
+
+.TextArea {
+  width: 450px;
   height: 100px;
 }
-.Submit{
+
+.Submit {
   background-color: #009270;
   margin: 10px 0px;
-  color:white;
+  color: white;
 }
-.ViewAllComments{
-  width:50%;
-  padding: 0px 0px 10px 650px;
+
+.ViewAllComments {
+  width: 50%;
+  padding: 0px 0px 10px 350px;
 
 }
-.CommentBtn{
+
+.CommentBtn {
   background-color: #009270;
   padding: 3px 5px;
-  color:#fff;
+  color: #fff;
   border: 0px;
 }
-.ViewComments{
+
+.ViewComments {
   padding: 10px 0px;
 }
-.EachComment{
+
+.EachComment {
   padding: 5px 0px;
+}
+
+.LiveScorePage {
+  margin-top: 6px;
+  background-color: #fff;
+}
+
+.LiveScoreHeader {
+  padding: 10px 20px;
+  border-bottom: 1px solid #E3E6E3;
+}
+
+.LiveScoreHeaderBtn {
+  margin: 0px 10px;
+  border: 0px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.LiveScoreHeaderBtnDefault {
+  color: #009270;
+  font-weight: bold;
+  text-decoration: underline;
+  border: 0px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.LiveScoreHeaderBtn:hover {
+  color: #009270;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.LiveScoreSubNav {
+  padding: 0px 20px;
+  border-bottom: 1px solid #E3E6E3;
+}
+
+.LiveScoreSubNav h3 {
+  padding: 0px 5px;
+}
+
+.LiveScoreHome{
+  padding: 10px 20px;
+  display: flex;
+}
+
+.League {
+  color: #fff;
+  background-color: #009270;
+  border-radius: 20px;
+  border: 0px;
+  /* margin-left: 5px; */
+  margin-right: 5px;
+  padding: 2px 8px;
+
+}
+.Domestic {
+  color: #0a0909;
+  background-color: #9ed1c5;
+  border-radius: 20px;
+  padding: 2px 8px;
+  border: 0px;
+  margin-left: 10px;
+}
+.Domestic:hover{
+  color: #fff;
+  background-color: #009270;
+}
+.LiveScoreHomePart1{
+  width:70%;
+  border-right: 2px solid  #E3E6E3;
+}
+.LiveScoreHomePart2{
+  width:30%;
+}
+.LiveScoreData{
+  padding: 10px 5px;
+}
+.TitleOfMatch{
+  margin: 10px 0px;
+  padding: 10px 10px;
+  background-color: #eaeaea;
+}
+.CurrentMatchDetails{
+  padding: 5px 0px;
+}
+.CurrentMatchVenue{
+  padding: 5px 0px 10px 0px;
+  font-size: 13px;
+  color:gray
+}
+.ScoreOfTheMatch{
+  background-color:  #edeaea;
+  padding: 10px;
+  line-height: 20px;
+  font-size: 13px;
+  width:250px;
+  border-left:3px solid red ;
+}
+.MatchStatus{
+  padding: 5px 0px;
+  color:red;
+  font-size: 13px;
+}
+.LiveScoreBtn{
+  color:blue;
+  border:0px;
+  padding:10px 15px 10px 0px;
+  margin-top: 10px;
+  background-color:white;
 }

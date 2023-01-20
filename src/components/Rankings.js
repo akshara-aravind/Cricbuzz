@@ -8,14 +8,14 @@ export default function Rankings() {
   const items = [
     {
       label: (
-        <Link >
+        <Link to='/men' >
           ICC Rankings-Men
         </Link>
       )
     },
     {
       label: (
-        <Link >
+        <Link to='/women'>
           ICC Rankings-Women
         </Link>
       )

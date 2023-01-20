@@ -2,26 +2,32 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useQuery } from "react-query";
+
 const fetchMatch = () => {
     return axios.get('http://localhost:4000/AllMatches');
 }
+
 const fetchLiveNow = () => {
     return axios.get('http://localhost:4000/LiveNowMatches');
 }
+
 const fetchMatchToday = () => {
     return axios.get('http://localhost:4000/TodayMatches');
 }
+
 export default function All() {
     const [livestate, SetLivestate] = useState(false);
     const [todaystate, SetTodaystate] = useState(false);
     const { data } = useQuery('AllMatches', fetchMatch);
     const { data: livenow } = useQuery('Livenowmatch', fetchLiveNow);
     const { data: matchtoday } = useQuery('Todaymatch', fetchMatchToday);
+
     // if (livenow)
     //     console.log("live now matches are here", livenow);
     // if (matchtoday)
     //     console.log("today matches are here", matchtoday);
     //     console.log("length", Object.keys({ Livenow }).length);
+
     let liveids = [];
     {
         liveids =
@@ -29,7 +35,9 @@ export default function All() {
                 match => match.AllMatchId
             )
     }
+
     // console.log("ids are here", liveids);
+
     let todayids = [];
     {
         todayids =
@@ -37,15 +45,19 @@ export default function All() {
                 match => match.AllMatchId
             )
     }
+
     // console.log("ids are here", todayids);
+
     const handleOnClickLive = () => {
         SetLivestate(true);
         SetTodaystate(false);
     }
+
     const handleOnClickToday = () => {
         SetLivestate(false);
         SetTodaystate(true);
     }
+
     const handleOnClickAll = () => {
         SetLivestate(false);
         SetTodaystate(false);
@@ -77,12 +89,8 @@ export default function All() {
                         </div>
                     )
                 }
-
-
             </div>
             )}
-
-
         </div>
     );
 }

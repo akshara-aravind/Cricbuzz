@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useQuery, useMutation } from "react-query";
 import { useParams } from "react-router-dom";
+import '../App.css'
 
 let newsId;
 
@@ -28,7 +29,6 @@ export default function LatestNewsInfo() {
    const LatestNewId = parseInt(newsId);
    const UserId = 1;
    const [text, SetText] = useState();
-
    const { data, isLoading, isSuccess } = useQuery('LatestNewsInfo', fetchNews)
    const { data: comments, isLoading: loading, isSuccess: success } = useQuery('Comments', fetchComments)
    const { mutate } = useMutation(postComment)

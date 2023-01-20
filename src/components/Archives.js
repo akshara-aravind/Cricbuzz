@@ -1,14 +1,11 @@
 import React from "react";
-import Footer from "./Footer";
-import Nav from "./Nav";
-import SubNav from "./SubNav";
-
-
+import '../App.css'
+import LiveScore from "./LiveScore";
 
 export default function Archives() {
    return (
       <div>
-            Archives
+            <LiveScore/>
       </div>
    );
 }

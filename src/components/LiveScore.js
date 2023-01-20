@@ -1,13 +1,15 @@
 import React from "react";
-import Footer from "./Footer";
-import Nav from "./Nav";
-import SubNav from "./SubNav";
-
+import LiveScoreHeader from "./LiveScoreHeader";
+import LiveScoreSubNav from "./LiveScoreSubNav";
+import LiveScoreHome from "./LiveScoreHome"
+import '../App.css';
 
 export default function LiveScore() {
    return (
-      <div>   
-            Livescore
+      <div className="LiveScorePage">  
+          <LiveScoreHeader/>
+          <LiveScoreSubNav/>
+          <LiveScoreHome/>
       </div>
    );
 }

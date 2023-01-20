@@ -2,10 +2,13 @@ import React from "react";
 import axios from "axios";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
+
 const fetchFeed = () => {
     return axios.get('http://localhost:4000/Matches')
 }
+
 const arr = [1, 2, 3];
+
 export default function Feed() {
     const { data } = useQuery('Feed', fetchFeed)
     return (

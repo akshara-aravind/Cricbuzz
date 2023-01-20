@@ -10,6 +10,8 @@ import LatestNewsInfo from './components/LatestNewsInfo';
 import Nav from './components/Nav';
 import SubNav from './components/SubNav';
 import Footer from './components/Footer';
+import WomenRanking from './components/WomenRanking';
+import MenRanking from './components/MenRanking';
 import './App.css';
 
 
@@ -19,22 +21,33 @@ function App() {
   return (
     <div>
       <QueryClientProvider client={queryClient}>
-    <div className='CricbuzzMainPage'>
-      <Nav/>
-      <SubNav/>
-        <Routes>
-          <Route path='/' element={<Main />} />
-          <Route path='/livescore' element={<LiveScore />} />
-          <Route path='/schedule' element={<Schedule />} />
-          <Route path='/archives' element={<Archives />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/latestnews/:newsId' element={<LatestNewsInfo/>} />
-        </Routes>
+        <div className='CricbuzzMainPage'>
+          <Nav />
+          <SubNav />
+          <Routes>
+            <Route path='/' element={<Main />} />
+            <Route path='/livescore' element={<LiveScore />} />
+            <Route path='/schedule' element={<Schedule />} />
+            <Route path='/archives' element={<Archives />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/women' element={<WomenRanking />} />
+            <Route path='/men' element={<MenRanking />} />
+            <Route path='/latestnews/:newsId' element={<LatestNewsInfo />} />
+          </Routes>
         </div>
-        <Footer/>
+        <Footer />
       </QueryClientProvider>
     </div>
   );
 }
 
 export default App;
+
+
+
+
+ 
+
+
+
+

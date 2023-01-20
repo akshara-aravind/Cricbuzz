@@ -1,5 +1,4 @@
 import img from '../images/cricbuzzlogo.svg'
-import '../App.css'
 import React from 'react';
 import News from './News'
 import More from './More';
@@ -16,6 +15,8 @@ import Button from "@material-ui/core/Button";
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { SearchOutlined, UserOutlined } from '@ant-design/icons'
+import '../App.css'
+
 
 export default function Nav() {
     const [open, setOpen] = useState(false);
