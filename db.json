@@ -2,15 +2,18 @@
   "Users": [
     {
       "id": 1,
-      "email": "rithikapullela@gmail.com"
+      "email": "rithikapullela@gmail.com",
+      "password": "123"
     },
     {
       "id": 2,
-      "email": "akshara@gmail.com"
+      "email": "akshara@gmail.com",
+      "password": "123"
     },
     {
       "id": 3,
-      "email": "sai@gmail.com"
+      "email": "sai@gmail.com",
+      "password": "123"
     }
   ],
   "LatestNews": [

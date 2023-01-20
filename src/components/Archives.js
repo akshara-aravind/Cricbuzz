@@ -8,12 +8,7 @@ import SubNav from "./SubNav";
 export default function Archives() {
    return (
       <div>
-         <div className="CricbuzzMainPage">
-            <Nav />
-            <SubNav />
             Archives
-         </div>
-         <Footer />
       </div>
    );
 }

@@ -1,10 +1,7 @@
 import React from "react";
-import Footer from "./Footer";
-import Nav from "./Nav";
-import SubNav from "./SubNav";
 import axios from "axios";
 import { useState } from "react";
-import { useQuery, useMutation, useQueryClient } from "react-query";
+import { useQuery, useMutation } from "react-query";
 import { useParams } from "react-router-dom";
 
 let newsId;
@@ -34,12 +31,7 @@ export default function LatestNewsInfo() {
 
    const { data, isLoading, isSuccess } = useQuery('LatestNewsInfo', fetchNews)
    const { data: comments, isLoading: loading, isSuccess: success } = useQuery('Comments', fetchComments)
-   const queryClient = useQueryClient()
-   const { mutate } = useMutation(postComment, {
-      onSuccess: () => {
-         queryClient.invalidateQueries('Comments')
-      },
-   })
+   const { mutate } = useMutation(postComment)
 
    if (loading)
       // console.log("loading");
@@ -60,9 +52,6 @@ export default function LatestNewsInfo() {
 
    return (
       <div>
-         <div className="CricbuzzMainPage">
-            <Nav />
-            <SubNav />
             <div className="EachLatestNews">
                <h1>{data && data.data.news} </h1>
                <img src={data && data.data.image} alt='is Loading' />
@@ -95,8 +84,6 @@ export default function LatestNewsInfo() {
                   </div>
                </div>
             </div>
-         </div>
-         <Footer />
       </div>
    );
 }

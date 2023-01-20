@@ -6,13 +6,8 @@ import SubNav from "./SubNav";
 
 export default function LiveScore() {
    return (
-      <div>
-         <div className="CricbuzzMainPage">
-            <Nav />
-            <SubNav />
+      <div>   
             Livescore
-         </div>
-         <Footer />
       </div>
    );
 }

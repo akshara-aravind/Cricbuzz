@@ -2,10 +2,25 @@ import React from 'react';
 import { Formik } from 'formik';
 import { Link, useNavigate } from 'react-router-dom';
 import { MailOutlined } from '@ant-design/icons'
+import { useQuery, useMutation } from 'react-query';
 import img from '../images/cricbuzzlogo.svg'
+import axios from 'axios';
+
+const GetLoginDetails = () => {
+   return axios.get('http://localhost:4000/Users');
+}
+const PostLoginDetails = (login) => {
+   return axios.post('http://localhost:4000/Users', login)
+}
 
 const Login = () => {
-   const navigate = useNavigate()
+   const navigate = useNavigate();
+   const { data, isLoading, isSuccess } = useQuery('logindetails', GetLoginDetails);
+   const { mutate } = useMutation(PostLoginDetails);
+   if (isSuccess)
+      console.log(data);
+   if (isLoading)
+      console.log("is Loading");
    return (
       <div className='CricbuzzLoginPage'>
          <div className='LoginNav'>
@@ -35,9 +50,32 @@ const Login = () => {
                }}
                onSubmit={(values, { setSubmitting }) => {
                   setTimeout(() => {
-                     // alert(JSON.stringify(values, null, 2));
-                     navigate('/');
-                     // console.log(values);
+                     const email = values.email;
+                     const password = values.password;
+                     const login = { email, password };
+                     let toggle ;
+                     {
+                        data?.data.map((login) => {
+                           if (login.email === email && login.password === password) {
+                              toggle=false;
+                           }
+                           else if (login.email === email) {
+                              toggle = true;
+                           }
+                        })
+                        if (toggle===true) {
+                           navigate('/login');
+                           alert(`Enter correct password`);
+                        }
+                        else if(toggle===false){
+                          navigate('/');
+                        }
+                        else{
+                           mutate(login);
+                           navigate('/');
+                        }
+                     }
+
                      setSubmitting(false);
                   }, 400);
                }}
@@ -62,7 +100,7 @@ const Login = () => {
                            value={values.email}
                         />
                         <br />
-                        {errors.email && touched.email && errors.email}
+                        <div> {errors.email && touched.email && errors.email}</div>
                      </div>
                      <br />
                      <div className='Login'>
@@ -75,7 +113,7 @@ const Login = () => {
                            onBlur={handleBlur}
                            value={values.password}
                         />
-                        {errors.password && touched.password && errors.password}
+                        <div> {errors.password && touched.password && errors.password}</div>
                      </div>
                      <br />
                      <button className='LoginSubmit' type="submit" disabled={isSubmitting}>
