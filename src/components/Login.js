@@ -1,20 +1,10 @@
-import React from 'react';
-import { Formik } from 'formik';
 import { Link, useNavigate } from 'react-router-dom';
-import { MailOutlined } from '@ant-design/icons'
 import { useQuery, useMutation } from 'react-query';
 import { Button, Checkbox, Form, Input } from 'antd';
+import React from 'react';
 import img from '../images/cricbuzzlogo.svg'
 import axios from 'axios';
 import '../App.css';
-
-const onFinish = (values) => {
-   console.log('Success:', values);
-};
-
-const onFinishFailed = (errorInfo) => {
-   console.log('Failed:', errorInfo);
-};
 
 const GetLoginDetails = () => {
    return axios.get('http://localhost:4000/Users');
@@ -84,7 +74,7 @@ const Login = () => {
                   remember: true,
                }}
                onFinish={onFinish}
-               onFinishFailed={onFinishFailed}
+               // onFinishFailed={onFinishFailed}
                autoComplete="off"
             >
                <Form.Item
