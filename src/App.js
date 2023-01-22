@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import WomenRanking from './components/WomenRanking';
 import MenRanking from './components/MenRanking';
 import './App.css';
+import { RecoilRoot } from 'recoil';
 
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ function App() {
     <div>
       <QueryClientProvider client={queryClient}>
         <div className='CricbuzzMainPage'>
+        <RecoilRoot>
           <Nav />
           <SubNav />
           <Routes>
@@ -34,6 +36,7 @@ function App() {
             <Route path='/men' element={<MenRanking />} />
             <Route path='/latestnews/:newsId' element={<LatestNewsInfo />} />
           </Routes>
+          </RecoilRoot>
         </div>
         <Footer />
       </QueryClientProvider>

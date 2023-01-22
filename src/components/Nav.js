@@ -12,14 +12,17 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import Button from "@material-ui/core/Button";
+import SubscribeState from '../recoil/SubscribeState';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
 import { SearchOutlined, UserOutlined } from '@ant-design/icons'
 import '../App.css'
 
 
 export default function Nav() {
     const [open, setOpen] = useState(false);
+    const [subsribe, SetSubscribe] = useRecoilState(SubscribeState);
 
     const handleClickToOpen = () => {
         setOpen(true);
@@ -28,6 +31,10 @@ export default function Nav() {
     const handleToClose = () => {
         setOpen(false);
     };
+    const handleToSubscribe = () => {
+        setOpen(false);
+        SetSubscribe(true);
+    }
     return (
         <div className='Header'>
             <div className='Logo'>
@@ -48,18 +55,18 @@ export default function Nav() {
                 <NavLink to='/login'><UserOutlined className='User' /></NavLink>
                 <Dialog open={open} onClose={handleToClose} >
                     <DialogTitle>
-                    The best of cricket for the greatest fan of Cricket
-                   </DialogTitle>
+                        The best of cricket for the greatest fan of Cricket
+                    </DialogTitle>
                     <DialogContent>
                         <DialogContentText>
-                        Get 15 Subscriptions with 1 Plan and save INR 10000!
+                            Get 15 Subscriptions with 1 Plan and save INR 10000!
                         </DialogContentText>
                     </DialogContent>
                     <DialogActions>
                         <Button onClick={handleToClose} color="primary" autoFocus>
                             Close
                         </Button>
-                        <Button onClick={handleToClose} color="primary" autoFocus>
+                        <Button onClick={handleToSubscribe} color="primary" autoFocus>
                             Subscribe
                         </Button>
                     </DialogActions>

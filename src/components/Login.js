@@ -1,6 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useQuery, useMutation } from 'react-query';
 import { Button, Checkbox, Form, Input } from 'antd';
+import { useRecoilState } from 'recoil';
+import LoginEmailState from '../recoil/LoginEmailState';
+import LoginState from '../recoil/LoginState';
 import React from 'react';
 import img from '../images/cricbuzzlogo.svg'
 import axios from 'axios';
@@ -17,37 +20,42 @@ const Login = () => {
    const navigate = useNavigate();
    const { data, isLoading, isSuccess } = useQuery('logindetails', GetLoginDetails);
    const { mutate } = useMutation(PostLoginDetails);
-   if (isSuccess)
-      console.log(data);
-   if (isLoading)
-      console.log("is Loading");
-    const onFinish = (values) => {
+   const [loginstate, SetLoginState] = useRecoilState(LoginState)
+   const [loginEmailState, SetLoginEmailState] = useRecoilState(LoginEmailState)
+
+
+   const onFinish = (values) => {
       const email = values.email;
       const password = values.password;
       const login = { email, password };
       let toggle;
       {
-        data?.data.map((login) => {
-          if (login.email === email && login.password === password) {
-            toggle = false;
-          }
-          else if (login.email === email) {
-            toggle = true;
-          }
-        })
-        if (toggle === true) {
-          navigate('/login');
-          alert(`Enter correct password`);
-        }
-        else if (toggle === false) {
-          navigate('/');
-        }
-        else {
-          mutate(login);
-          navigate('/');
-        }
+         data?.data.map((login) => {
+            if (login.email === email && login.password === password) {
+               toggle = false;
+            }
+            else if (login.email === email) {
+               toggle = true;
+            }
+         })
+         if (toggle === true) {
+            navigate('/login');
+            alert(`Enter correct password`);
+         }
+         else if (toggle === false) {
+            navigate('/');
+            SetLoginState(true);
+            SetLoginEmailState(email);
+         }
+         else {
+            mutate(login);
+            navigate('/');
+            SetLoginState(true);
+            SetLoginEmailState(email);
+         }
+
       }
-       };
+   };
    return (
       <div className='CricbuzzLoginPage'>
          <div className='LoginNav'>
@@ -74,7 +82,6 @@ const Login = () => {
                   remember: true,
                }}
                onFinish={onFinish}
-               // onFinishFailed={onFinishFailed}
                autoComplete="off"
             >
                <Form.Item

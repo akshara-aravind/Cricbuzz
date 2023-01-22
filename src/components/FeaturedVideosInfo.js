@@ -22,7 +22,7 @@ export default function Archives() {
             time: "12h ago"
         }
     ];
-    
+
     return (
         <div className="FeaturedVideosList">
             <div className="FeaturedMatchesTitle">FEATURED VIDEOS</div>
