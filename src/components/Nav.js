@@ -13,19 +13,27 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import Button from "@material-ui/core/Button";
 import SubscribeState from '../recoil/SubscribeState';
+import LoginState from '../recoil/LoginState';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { SearchOutlined, UserOutlined } from '@ant-design/icons'
 import '../App.css'
 
 
 export default function Nav() {
     const [open, setOpen] = useState(false);
-    const [subsribe, SetSubscribe] = useRecoilState(SubscribeState);
+    const [subscribe, SetSubscribe] = useRecoilState(SubscribeState);
+    const login = useRecoilValue(LoginState);
+    const navigate = useNavigate();
 
     const handleClickToOpen = () => {
-        setOpen(true);
+        if (login)
+            setOpen(true);
+        else
+            navigate('/login');
+
     };
 
     const handleToClose = () => {
@@ -34,6 +42,7 @@ export default function Nav() {
     const handleToSubscribe = () => {
         setOpen(false);
         SetSubscribe(true);
+
     }
     return (
         <div className='Header'>
@@ -50,7 +59,7 @@ export default function Nav() {
                 <Videos />
                 <Rankings />
                 <More />
-                <button className='CricBuzzBtn' onClick={handleClickToOpen}>Cricbuzz Plus</button>
+                {!subscribe && <button className='CricBuzzBtn' onClick={handleClickToOpen}>Cricbuzz Plus</button>}
                 <SearchOutlined className='Search' />
                 <NavLink to='/login'><UserOutlined className='User' /></NavLink>
                 <Dialog open={open} onClose={handleToClose} >

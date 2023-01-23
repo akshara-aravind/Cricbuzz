@@ -4,7 +4,7 @@ import LiveScore from "./LiveScore";
 export default function Schedule() {
    return (
       <div>
-      <LiveScore/>
+         <LiveScore />
       </div>
    );
 }

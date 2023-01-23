@@ -81,7 +81,6 @@ export default function All() {
                                 {
                                     ((livestate && liveids.indexOf(details.id) > -1) || (todaystate && todayids.indexOf(details.id) > -1)) ? <b>{details.name}</b> : <span>{details.name}</span>
                                 }
-
                             </div>
                             <div className="MatchTypeInAll">
                                 {details.matchType}

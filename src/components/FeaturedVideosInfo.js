@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import '../App.css'
 
-export default function Archives() {
+export default function FeaturedVideosInfo() {
+    const navigate = useNavigate();
     const arr = [
         {
             id: 1,
@@ -22,6 +24,10 @@ export default function Archives() {
             time: "12h ago"
         }
     ];
+    const handleOnclick = () => {
+        // navigate('/login');
+        console.log("vedio is playing");
+    }
 
     return (
         <div className="FeaturedVideosList">
@@ -29,14 +35,14 @@ export default function Archives() {
             <div>
                 {
                     arr.map(arr => (
-                        <div key={arr.id} className="EachFeaturedVideo">
-                            <iframe
-                                width="100%"
-                                height="315"
-                                src={arr.image}
-                                title="Youtube Player"
-                                allowFullScreen
-                            />
+                        <div key={arr.id} className="EachFeaturedVideo">  
+                                <iframe
+                                    width="100%"
+                                    height="315"
+                                    src={arr.image}
+                                    title="Youtube Player"
+                                    allowFullScreen
+                                />
                             <h3>{arr.title}</h3>
                             <div style={{ color: 'gray' }}>{arr.time}</div>
                         </div>
