@@ -16,51 +16,96 @@ const fetchMatchToday = () => {
 }
 
 export default function All() {
-    const [livestate, SetLivestate] = useState(false);
-    const [todaystate, SetTodaystate] = useState(false);
-    const { data } = useQuery('AllMatches', fetchMatch);
-    const { data: livenow } = useQuery('Livenowmatch', fetchLiveNow);
-    const { data: matchtoday } = useQuery('Todaymatch', fetchMatchToday);
+    const [liveState, SetLiveState] = useState(false);
+    const [todayState, SetTodayState] = useState(false);
+    const { data, isLoading, isError, error } = useQuery('AllMatches', fetchMatch);
+    const { data: liveNow, isLoading: isLoading1, isError: isError1, error: error1 } = useQuery('Livenowmatch', fetchLiveNow);
+    const { data: matchToday, isLoading: isLoading2, isError: isError2, error: error2 } = useQuery('Todaymatch', fetchMatchToday);
 
-    // if (livenow)
-    //     console.log("live now matches are here", livenow);
-    // if (matchtoday)
-    //     console.log("today matches are here", matchtoday);
-    //     console.log("length", Object.keys({ Livenow }).length);
-
-    let liveids = [];
-    {
-        liveids =
-            livenow?.data.map(
-                match => match.AllMatchId
-            )
+    if (isLoading) {
+        return <h1>Loading</h1>
+    }
+    if (isError) {
+        return <h1>{error.message}</h1>
     }
 
-    // console.log("ids are here", liveids);
-
-    let todayids = [];
-    {
-        todayids =
-            matchtoday?.data.map(
-                match => match.AllMatchId
-            )
+    if (isLoading1) {
+        return <h1>Loading</h1>
+    }
+    if (isError1) {
+        return <h1>{error1.message}</h1>
     }
 
-    // console.log("ids are here", todayids);
+    if (isLoading2) {
+        return <h1>Loading</h1>
+    }
+    if (isError2) {
+        return <h1>{error2.message}</h1>
+    }
+    //  TODO: handle data loading and error cases
+
+
+    // if (liveNow)
+    //     console.log("live now matches are here", liveNow);
+    // if (matchToday)
+    //     console.log("today matches are here", matchToday);
+    //     console.log("length", Object.keys({ liveNow }).length);
+
+    // let liveIds = [];
+
+    let liveIds = liveNow?.data.map(
+        match => match.AllMatchId
+    )
+
+    // console.log("Ids are here", liveIds);
+
+    let todayIds = matchToday?.data.map(
+        match => match.AllMatchId
+    )
+
+    // console.log("Ids are here", todayIds);
 
     const handleOnClickLive = () => {
-        SetLivestate(true);
-        SetTodaystate(false);
+        SetLiveState(true);
+        SetTodayState(false);
     }
 
     const handleOnClickToday = () => {
-        SetLivestate(false);
-        SetTodaystate(true);
+        SetLiveState(false);
+        SetTodayState(true);
     }
 
     const handleOnClickAll = () => {
-        SetLivestate(false);
-        SetTodaystate(false);
+        SetLiveState(false);
+        SetTodayState(false);
+    }
+
+    const displayAll=()=> {
+        return (
+            <div>
+                {
+                    data?.data.map(match => <div key={match.type}>
+                        <div className="Matchtype">
+                            <b>{match.type}</b>
+                        </div>
+                        {
+                            match.details.map((details) =>
+                                <div key={details.id}>
+                                    <div className="MatchName" >
+                                        {
+                                            ((liveState && liveIds.indexOf(details.id) > -1) || (todayState && todayIds.indexOf(details.id) > -1)) ? <b>{details.name}</b> : <span>{details.name}</span>
+                                        }
+                                    </div>
+                                    <div className="MatchTypeInAll">
+                                        {details.matchType}
+                                    </div>
+                                </div>
+                            )
+                        }
+                    </div>
+                    )}
+            </div>
+        );
     }
 
     return (
@@ -70,26 +115,7 @@ export default function All() {
                 <button className="ButtonsInAll" onClick={handleOnClickLive}>Live Now</button>
                 <button className="ButtonsInAll" onClick={handleOnClickToday}>Today</button>
             </div>
-            {data?.data.map(match => <div key={match.type}>
-                <div className="Matchtype">
-                    <b>{match.type}</b>
-                </div>
-                {
-                    match.details.map((details) =>
-                        <div key={details.id}>
-                            <div className="MatchName" >
-                                {
-                                    ((livestate && liveids.indexOf(details.id) > -1) || (todaystate && todayids.indexOf(details.id) > -1)) ? <b>{details.name}</b> : <span>{details.name}</span>
-                                }
-                            </div>
-                            <div className="MatchTypeInAll">
-                                {details.matchType}
-                            </div>
-                        </div>
-                    )
-                }
-            </div>
-            )}
+            {displayAll()}
         </div>
     );
 }

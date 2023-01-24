@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import '../App.css'
 
 export default function Rankings() {
+
   const items = [
     {
       label: (

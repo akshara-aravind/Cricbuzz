@@ -16,16 +16,34 @@
       "password": "123"
     },
     {
-      "email": "aksharar@gmail.com",
-      "password": "123",
-      "id": 4
-    },
-    {
+      "id": 4,
       "email": "a@gmail.com",
-      "password": "34r",
-      "id": 5
+      "password": "123"
     }
   ],
+  "videos" :[
+    {
+        "id": 1,
+        "videos": "https://www.youtube.com/embed/XOrnGa2gqzc",
+        "image": "https://www.cricbuzz.com/a/img/v1/980x654/i1/c248130/rohit-sharmas-28-ball-27-enca.jpg",
+        "title": "Suryakumar Yadav more consistent than AB de Villiers: Ajay Jadeja",
+        "time": "2h ago"
+    },
+    {
+        "id": 2,
+        "videos": "https://www.youtube.com/embed/Hn7_WaU9Bz4",
+        "image": "https://www.cricbuzz.com/a/img/v1/595x396/i1/c245972/india-go-top-of-the-group-1-wi.jpg",
+        "title": "2nd T20I India Vs Sri Lanka Match Today | India Vs Sri Lanka Live Match Today | English News Live",
+        "time": "6h ago"
+    },
+    {
+        "id": 3,
+        "videos": "https://www.youtube.com/embed/dKdujAgU3v8",
+        "image": "https://img.etimg.com/thumb/msid-47102895,width-650,height-488,imgsize-60164,,resizemode-75/.jpg",
+        "title": "Virat Kohli Century Highlights: Virat Kohli's 45th Century | IND vs SL 1st ODI | Kohli Batting Today",
+        "time": "12h ago"
+    }
+],
   "LatestNews": [
     {
       "id": 1,
@@ -62,10 +80,15 @@
       "text": "my comment3"
     },
     {
-      "text": "gbhfgtrcv",
-      "UserId": 5,
+      "text": "test\n",
+      "UserId": 4,
       "LatestNewId": 1,
       "id": 4
+    },
+    {
+      "text": "dvfdrv",
+      "LatestNewId": 1,
+      "id": 5
     }
   ],
   "AllMatches": [

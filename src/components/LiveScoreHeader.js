@@ -1,16 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import '../App.css';
 
 export default function LiveScoreHeader() {
     return (
         <div className="LiveScoreHeader">
-            <div >
-                <button className="LiveScoreHeaderBtnDefault">Current Matches</button>
-                <button className="LiveScoreHeaderBtn">Current & Future Series</button>
-                <button className="LiveScoreHeaderBtn">Matches By Day</button>
-                <button className="LiveScoreHeaderBtn">Teams</button>
-                <button className="LiveScoreHeaderBtn">Series & Archive</button>
-            </div>
+            
+                <Link className="LiveScoreHeaderBtnDefault">Current Matches</Link>
+                <Link className="LiveScoreHeaderBtn">Current & Future Series</Link>
+                <Link className="LiveScoreHeaderBtn">Matches By Day</Link>
+                <Link className="LiveScoreHeaderBtn">Teams</Link>
+                <Link className="LiveScoreHeaderBtn">Series & Archive</Link>
+           
         </div>
     );
 }

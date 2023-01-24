@@ -1,5 +1,6 @@
 import React from "react";
 import '../App.css'
+import { Link } from "react-router-dom";
 
 export default function LiveScoreData() {
    return (
@@ -23,10 +24,10 @@ export default function LiveScoreData() {
             </div>
          </div>
          <div>
-            <button className="LiveScoreBtn">Live Score</button>
-            <button className="LiveScoreBtn">Scorecard</button>
-            <button className="LiveScoreBtn">Full Commentary</button>
-            <button className="LiveScoreBtn">News</button>
+            <Link className="LiveScoreBtn">Live Score</Link>
+            <Link className="LiveScoreBtn">Scorecard</Link>
+            <Link className="LiveScoreBtn">Full Commentary</Link>
+            <Link className="LiveScoreBtn">News</Link>
          </div>
          <div className="TitleOfMatch">
             SUPER SMASH 2022-23
@@ -45,10 +46,10 @@ export default function LiveScoreData() {
             </div>
          </div>
          <div>
-            <button className="LiveScoreBtn">Live Score</button>
-            <button className="LiveScoreBtn">Scorecard</button>
-            <button className="LiveScoreBtn">Full Commentary</button>
-            <button className="LiveScoreBtn">News</button>
+            <Link className="LiveScoreBtn">Live Score</Link>
+            <Link className="LiveScoreBtn">Scorecard</Link>
+            <Link className="LiveScoreBtn">Full Commentary</Link>
+            <Link className="LiveScoreBtn">News</Link>
          </div>
       </div>
    );

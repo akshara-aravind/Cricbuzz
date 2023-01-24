@@ -9,9 +9,16 @@ const fetchMatch = () => {
 }
 
 export default function CarouselPart() {
-  const { data, isLoading, isSuccess } = useQuery('HomeMatches', fetchMatch);
+  const { data, isLoading, isError, error } = useQuery('HomeMatches', fetchMatch);
   // console.log(data)
   // return <div>hello </div>  
+  if (isLoading) {
+    return <h1>Loading</h1>
+  }
+  if (isError) {
+    return <h1>{error.message}</h1>
+  }
+
   return (
 
     <div className='HomePage'>

@@ -15,18 +15,25 @@ const fetchComments = () => {
 export default function ViewComments() {
     const params = useParams();
     newsId = params.newsId;
-    const [viewcomments, SetviewComments] = useState(false);
-    const { data: comments } = useQuery('Comments', fetchComments);
+    const [viewComments, SetViewComments] = useState(false);
+    const { data: comments, isError, isLoading, error } = useQuery('Comments', fetchComments);
+    if (isLoading) {
+        return <h1>Loading</h1>
+    }
+
+    if (isError) {
+        return <h1>{error.message}</h1>
+    }
 
     const HandleOnClick = () => {
-        SetviewComments(!viewcomments);
+        SetViewComments(!viewComments);
     }
 
     return (
         <div>
             <button onClick={HandleOnClick} className='CommentBtn'>view all comments</button>
             {
-                viewcomments &&
+                viewComments &&
                 <div className="ViewComments">
                     {comments?.data.Comments.map((comments) => {
                         return (

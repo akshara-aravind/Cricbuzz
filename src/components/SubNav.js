@@ -13,11 +13,20 @@ const fetchMatches = () => {
 }
 
 export default function SubNav() {
+
   const [all, setAll] = useState('ALL');
-  const [toggleall, setToggleall] = useState(true);
-  const { data } = useQuery('matches', fetchMatches)
+  const [toggleAll, setToggleAll] = useState(true);
+  const { data, isLoading, isError, error } = useQuery('matches', fetchMatches);
+  if (isLoading) {
+    return <h1>Loading</h1>
+  }
+
+  if (isError) {
+    return <h1>{error.message}</h1>
+  }
+
   const handleOnClick = () => {
-    setToggleall(!toggleall);
+    setToggleAll(!toggleAll);
     if (all === 'ALL')
       setAll('CLOSE')
     else
@@ -38,11 +47,11 @@ export default function SubNav() {
       <div className='All'>
         <Button className='ToggleAll' onClick={handleOnClick}>
           <b>{all}</b>
-          {toggleall ? <CaretDownOutlined /> : <CaretUpOutlined />}
+          {toggleAll ? <CaretDownOutlined /> : <CaretUpOutlined />}
         </Button>
       </div>
       {
-        !toggleall && <All />
+        !toggleAll && <All />
       }
     </div>
   );

@@ -1,7 +1,7 @@
 .CricbuzzMainPage {
   padding: 1% 17%;
   background: #E3E6E3;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   font-size: 15px;
 }
 
@@ -370,7 +370,7 @@ button.rec-dot {
 .CricbuzzLoginPage {
   padding: 1% 15%;
   background: #E3E6E3;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   font-size: 15px;
 }
 
@@ -428,10 +428,10 @@ button.rec-dot {
 }
 
 .EachLatestNews {
-  width:70%;
+  width: 70%;
   margin-top: 6px;
   padding: 10px 30px;
-  border-right:2px solid #E3E6E3;
+  border-right: 2px solid #E3E6E3;
 }
 
 .EachLatestNews h1 {
@@ -440,7 +440,7 @@ button.rec-dot {
 
 .EachLatestNews img {
   padding: 10px 160px;
-  width:300px;
+  width: 300px;
 }
 
 .EachLatestNews p {
@@ -449,9 +449,11 @@ button.rec-dot {
   font-size: 15px;
   word-spacing: 4px;
 }
-.LatestNewsPart2{
-  width:30%;
+
+.LatestNewsPart2 {
+  width: 30%;
 }
+
 .comments {
   display: flex;
 }
@@ -498,14 +500,21 @@ button.rec-dot {
   background-color: #fff;
 }
 
+.LiveScore {
+  display: flex;
+}
+
 .LiveScoreHeader {
   padding: 10px 20px;
+  display: flex;
   border-bottom: 1px solid #E3E6E3;
 }
 
 .LiveScoreHeaderBtn {
   margin: 0px 10px;
+  color: black;
   border: 0px;
+  font-weight: bold;
   cursor: pointer;
   background-color: #fff;
 }
@@ -521,13 +530,16 @@ button.rec-dot {
 
 .LiveScoreHeaderBtn:hover {
   color: #009270;
-  font-weight: bold;
   text-decoration: underline;
 }
 
 .LiveScoreSubNav {
   padding: 0px 20px;
   border-bottom: 1px solid #E3E6E3;
+}
+
+.LiveScoreSubNavBtnList {
+  display: flex;
 }
 
 .LiveScoreSubNav h3 {
@@ -615,23 +627,95 @@ button.rec-dot {
   margin-top: 10px;
   background-color: white;
 }
-.LatestNewsPart2Title{
+
+.LatestNewsPart2Title {
   color: #009270;
   font-size: 16px;
   font-weight: bold;
-  padding:20px 10px 10px 10px ;
+  padding: 20px 10px 10px 10px;
   margin: 0px;
 }
-.LatestNewsPart2EachNews{
-  display:flex;
+
+.LatestNewsPart2EachNews {
+  display: flex;
   padding: 10px 10px;
-  box-shadow: 0px 1px rgb(226, 224, 224);;
+  box-shadow: 0px 1px rgb(226, 224, 224);
+  ;
 }
-.LatestNewsPart2EachNews img{
-  width:50%;
-  height:70px;
+
+.LatestNewsPart2EachNews img {
+  width: 50%;
+  height: 70px;
 }
-.LatestNewsPart2EachNewsTitle{
+
+.LatestNewsPart2EachNewsTitle {
   font-size: 13px;
   padding: 2px;
+}
+
+.Profile {
+  margin-top: 6px;
+  display: flex;
+  background-color: white;
+}
+
+.Account {
+  width: 50%;
+}
+
+.MyProfile {
+  width: 50%;
+}
+
+.Title {
+  padding: 50px 50px 20px 50px;
+}
+
+.ElementsInAccount {
+  border: 1px solid rgb(199, 196, 196);
+  margin: 10px 100px 100px 50px;
+}
+
+.ElementsInAccount button {
+  text-align: start;
+  display: block;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid rgb(187, 183, 183);
+  background-color: white;
+}
+
+.ElementsInAccount button:focus {
+  cursor: pointer;
+  background-color: #009270;
+  color: white;
+}
+
+.ElementsInProfile {
+
+  padding: 10px 50px;
+}
+
+.EmailInProfile {
+  background-color: #dce1e0;
+  padding: 5px;
+  border: 1px solid rgb(187, 183, 183);
+}
+
+.MenRanking {
+  margin-top: 6px;
+  background-color: white;
+  padding: 10px;
+}
+.ImageInFeaturedVedios{
+  padding: 10px 0px;
+}
+
+.ImageInFeaturedVedios img {
+  width:100%;
+  cursor: pointer;
+}
+.CricbuzzVideos{
+  background-color: white;
+  padding: 30px;
 }

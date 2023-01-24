@@ -28,23 +28,34 @@ export default function PostComment() {
     const LatestNewId = parseInt(newsId);
     const navigate = useNavigate();
     let UserId;
-    const { data: users, isLoading: loading, isSuccess: success } = useQuery('User', fetchUsers)
+    const { data: users, isLoading, isError, error } = useQuery('User', fetchUsers)
     const { mutate } = useMutation(postComment)
+    
+    if (isLoading) {
+        return <h1>Loading</h1>
+    }
+
+    if (isError) {
+        return <h1>{error.message}</h1>
+    }
 
     const handleSubmit = () => {
-        const comment = { text, UserId, LatestNewId }
+        const userId = getCurrentUserId()
+        const comment = { text, userId, LatestNewId }
         if (login === true)
             mutate(comment);
         else
             navigate('/login');
     }
-    {
+
+    const getCurrentUserId = () => {
         users?.data.map((users) => {
             if (users.email === email) {
-                UserId = users.id;
+                return users.id;
             }
         })
     }
+
 
     return (
         <div>

@@ -1,5 +1,3 @@
-import { Route, Routes } from 'react-router-dom';
-import { QueryClientProvider, QueryClient } from 'react-query';
 import React from 'react';
 import LiveScore from './components/LiveScore';
 import Main from './components/Main';
@@ -12,30 +10,43 @@ import SubNav from './components/SubNav';
 import Footer from './components/Footer';
 import WomenRanking from './components/WomenRanking';
 import MenRanking from './components/MenRanking';
-import './App.css';
+import Profile from './components/Profile';
 import { RecoilRoot } from 'recoil';
-
+import { Route, Routes, useLocation } from 'react-router-dom';
+import { QueryClientProvider, QueryClient } from 'react-query';
+import './App.css';
+import CricbuzzVideos from './components/CricbuzzVideos';
 
 const queryClient = new QueryClient();
 
 function App() {
+  const location = useLocation();
+  // console.log(location.pathname);
   return (
     <div>
       <QueryClientProvider client={queryClient}>
         <div className='CricbuzzMainPage'>
-        <RecoilRoot>
-          <Nav />
-          <SubNav />
-          <Routes>
-            <Route path='/' element={<Main />} />
-            <Route path='/livescore' element={<LiveScore />} />
-            <Route path='/schedule' element={<Schedule />} />
-            <Route path='/archives' element={<Archives />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/women' element={<WomenRanking />} />
-            <Route path='/men' element={<MenRanking />} />
-            <Route path='/latestnews/:newsId' element={<LatestNewsInfo />} />
-          </Routes>
+          <RecoilRoot>
+            {
+              location.pathname !== '/login' &&
+              <div>
+                <Nav />
+                <SubNav />
+              </div>
+            }
+
+            <Routes>
+              <Route path='/' element={<Main />} />
+              <Route path='/livescore' element={<LiveScore />} />
+              <Route path='/schedule' element={<Schedule />} />
+              <Route path='/archives' element={<Archives />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/profile' element={<Profile />} />
+              <Route path='/women' element={<WomenRanking />} />
+              <Route path='/men' element={<MenRanking />} />
+              <Route path='/videos/:videosId' element={<CricbuzzVideos/>} />
+              <Route path='/latestnews/:newsId' element={<LatestNewsInfo />} />
+            </Routes>
           </RecoilRoot>
         </div>
         <Footer />
@@ -49,7 +60,7 @@ export default App;
 
 
 
- 
+
 
 
 

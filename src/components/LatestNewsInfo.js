@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { useQuery, useMutation } from "react-query";
+import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import '../App.css'
 import LatestNewsWithImage from "./LatestNewsWithImage";
@@ -13,12 +13,19 @@ const fetchNews = () => {
 }
 
 export default function LatestNewsInfo() {
-  
+
    const params = useParams();
    newsId = params.newsId;
 
-   const { data, isLoading, isSuccess } = useQuery('LatestNewsInfo', fetchNews)
-  
+   const { data, isLoading, isSuccess, isError, error } = useQuery('LatestNewsInfo', fetchNews)
+
+   if (isLoading) {
+      return <h1>Loading</h1>
+   }
+   if (isError) {
+      return <h1>{error.message}</h1>
+   }
+
    return (
       <div className="LatestNewsPage">
          <div className="EachLatestNews">
@@ -26,10 +33,10 @@ export default function LatestNewsInfo() {
             <img src={data && data.data.image} alt='is Loading' />
             <p>{data && data.data.text}</p>
             <h2>COMMENTS</h2>
-            <Comments/>
+            <Comments />
          </div>
          <div className="LatestNewsPart2">
-            <LatestNewsWithImage/>
+            <LatestNewsWithImage />
          </div>
       </div>
    );

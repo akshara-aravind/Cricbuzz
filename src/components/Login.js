@@ -18,11 +18,18 @@ const PostLoginDetails = (login) => {
 
 const Login = () => {
    const navigate = useNavigate();
-   const { data, isLoading, isSuccess } = useQuery('logindetails', GetLoginDetails);
+   const { data, isLoading, isSuccess, isError, error } = useQuery('logindetails', GetLoginDetails);
    const { mutate } = useMutation(PostLoginDetails);
    const [loginstate, SetLoginState] = useRecoilState(LoginState)
    const [loginEmailState, SetLoginEmailState] = useRecoilState(LoginEmailState)
 
+   if (isLoading) {
+      return <h1>Loading</h1>
+   }
+
+   if (isError) {
+      return <h1>{error.message}</h1>
+   }
 
    const onFinish = (values) => {
       const email = values.email;
@@ -56,6 +63,7 @@ const Login = () => {
 
       }
    };
+
    return (
       <div className='CricbuzzLoginPage'>
          <div className='LoginNav'>
