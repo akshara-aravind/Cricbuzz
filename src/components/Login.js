@@ -17,8 +17,10 @@ const PostLoginDetails = (login) => {
 }
 
 const Login = () => {
-   const navigate = useNavigate();
+   
    const { data, isLoading, isSuccess, isError, error } = useQuery('logindetails', GetLoginDetails);
+
+   const navigate = useNavigate();
    const { mutate } = useMutation(PostLoginDetails);
    const [loginstate, SetLoginState] = useRecoilState(LoginState)
    const [loginEmailState, SetLoginEmailState] = useRecoilState(LoginEmailState)

@@ -15,25 +15,28 @@ export default function LatestNewsWithImage() {
     if (isLoading) {
         return <h1>Loading</h1>
     }
-    
+
     if (isError) {
         return <h1>{error.message}</h1>
     }
-
-    const displayNews=()=>{
-        {
-            arr.map((arr) => (
-            <div key={arr}>
-                {news?.data.map(news => {
-                    return (
-                        <div key={news.id} className='LatestNewsPart2EachNews'>
-                            <img src={news.image} alt="is Loading" />
-                            <div className="LatestNewsPart2EachNewsTitle">{news.news}</div>
+    const displayNews = () => {
+        return (
+            <div>
+                {
+                    arr.map((arr) => (
+                        <div key={arr}>
+                            {news?.data.map(news => {
+                                return (
+                                    <div key={news.id} className='LatestNewsPart2EachNews'>
+                                        <img src={news.image} alt="is Loading" />
+                                        <div className="LatestNewsPart2EachNewsTitle">{news.news}</div>
+                                    </div>
+                                );
+                            })}
                         </div>
-                    );
-                })}
+                    ))}
             </div>
-        ))}
+        );
     }
 
     return (

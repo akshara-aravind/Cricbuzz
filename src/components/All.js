@@ -16,6 +16,7 @@ const fetchMatchToday = () => {
 }
 
 export default function All() {
+
     const [liveState, SetLiveState] = useState(false);
     const [todayState, SetTodayState] = useState(false);
     const { data, isLoading, isError, error } = useQuery('AllMatches', fetchMatch);
@@ -25,6 +26,7 @@ export default function All() {
     if (isLoading) {
         return <h1>Loading</h1>
     }
+
     if (isError) {
         return <h1>{error.message}</h1>
     }
@@ -32,6 +34,7 @@ export default function All() {
     if (isLoading1) {
         return <h1>Loading</h1>
     }
+
     if (isError1) {
         return <h1>{error1.message}</h1>
     }
@@ -39,19 +42,17 @@ export default function All() {
     if (isLoading2) {
         return <h1>Loading</h1>
     }
+
     if (isError2) {
         return <h1>{error2.message}</h1>
     }
     //  TODO: handle data loading and error cases
-
 
     // if (liveNow)
     //     console.log("live now matches are here", liveNow);
     // if (matchToday)
     //     console.log("today matches are here", matchToday);
     //     console.log("length", Object.keys({ liveNow }).length);
-
-    // let liveIds = [];
 
     let liveIds = liveNow?.data.map(
         match => match.AllMatchId

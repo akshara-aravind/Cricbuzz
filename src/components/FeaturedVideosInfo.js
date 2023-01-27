@@ -5,16 +5,18 @@ import { useQuery } from "react-query";
 import { useRecoilValue } from "recoil";
 import '../App.css'
 import LoginState from "../recoil/LoginState";
+import SubscribeState from "../recoil/SubscribeState";
 
 
 const fetchVedios = () => {
-    return axios.get('http://localhost:4000/videos');
+    return axios.get('http://localhost:4000/videos')
 }
 
 export default function FeaturedVideosInfo() {
     const { data: arr, isError, isLoading, error } = useQuery('Vedios', fetchVedios)
-    const navigate = useNavigate();
+    const navigate = useNavigate()
     const login=useRecoilValue(LoginState)
+    const subscribe=useRecoilValue(SubscribeState)
 
     if (isLoading) {
         return <h1>Loading</h1>
@@ -33,10 +35,12 @@ export default function FeaturedVideosInfo() {
                         return (
                             <div key={arr.id} className="ImageInFeaturedVedios">
                                 <img src={arr.image} alt="is Loading" onClick={() => {
-                                    if(login)
+                                    if(login && subscribe)
                                     navigate(`/videos/${arr.id}`);
-                                    else 
+                                    else if(!login)
                                     navigate('/login');
+                                    else 
+                                    alert('Subscribe to Cricbuzz Plus to watch videos')
                                 }
                                 } />
                                 <h3>{arr.title}</h3>

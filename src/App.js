@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import WomenRanking from './components/WomenRanking';
 import MenRanking from './components/MenRanking';
 import Profile from './components/Profile';
+import Protected from './components/Protected';
 import { RecoilRoot } from 'recoil';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { QueryClientProvider, QueryClient } from 'react-query';
@@ -44,7 +45,7 @@ function App() {
               <Route path='/profile' element={<Profile />} />
               <Route path='/women' element={<WomenRanking />} />
               <Route path='/men' element={<MenRanking />} />
-              <Route path='/videos/:videosId' element={<CricbuzzVideos/>} />
+              <Route path='/videos/:videosId' element={< Protected CricbuzzVideos={CricbuzzVideos}/>} />
               <Route path='/latestnews/:newsId' element={<LatestNewsInfo />} />
             </Routes>
           </RecoilRoot>

@@ -6,7 +6,7 @@ import LoginState from "../recoil/LoginState";
 import { useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { useState } from "react";
-import { useQuery, useMutation } from "react-query";
+import { useQuery, useMutation , useQueryClient} from "react-query";
 import { useParams } from "react-router-dom";
 
 let newsId;
@@ -29,7 +29,12 @@ export default function PostComment() {
     const navigate = useNavigate();
     let UserId;
     const { data: users, isLoading, isError, error } = useQuery('User', fetchUsers)
-    const { mutate } = useMutation(postComment)
+    const queryClient=useQueryClient()
+    const { mutate } = useMutation(postComment,{
+        onSuccess:()=>{
+            queryClient.invalidateQueries('Comments')
+        }
+    })
     
     if (isLoading) {
         return <h1>Loading</h1>
@@ -55,7 +60,6 @@ export default function PostComment() {
             }
         })
     }
-
 
     return (
         <div>
