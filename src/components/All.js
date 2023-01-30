@@ -1,27 +1,16 @@
-import axios from "axios";
-import React from "react";
 import { useState } from "react";
-import { useQuery } from "react-query";
-
-const fetchMatch = () => {
-    return axios.get('http://localhost:4000/AllMatches');
-}
-
-const fetchLiveNow = () => {
-    return axios.get('http://localhost:4000/LiveNowMatches');
-}
-
-const fetchMatchToday = () => {
-    return axios.get('http://localhost:4000/TodayMatches');
-}
+import React from "react";
+import useGetTodayMatches from "../hooks/useGetTodayMatches";
+import useGetAllMatches from "../hooks/useGetAllMatches"; 
+import useGetLiveNow from "../hooks/useGetLiveNow";
 
 export default function All() {
 
     const [liveState, SetLiveState] = useState(false);
     const [todayState, SetTodayState] = useState(false);
-    const { data, isLoading, isError, error } = useQuery('AllMatches', fetchMatch);
-    const { data: liveNow, isLoading: isLoading1, isError: isError1, error: error1 } = useQuery('Livenowmatch', fetchLiveNow);
-    const { data: matchToday, isLoading: isLoading2, isError: isError2, error: error2 } = useQuery('Todaymatch', fetchMatchToday);
+    const { data, isLoading, isError, error } = useGetAllMatches();
+    const { data: liveNow, isLoading: isLoading1, isError: isError1, error: error1 } = useGetLiveNow();
+    const { data: matchToday, isLoading: isLoading2, isError: isError2, error: error2 } = useGetTodayMatches();
 
     if (isLoading) {
         return <h1>Loading</h1>

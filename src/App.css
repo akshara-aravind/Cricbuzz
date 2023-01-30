@@ -492,7 +492,11 @@ button.rec-dot {
 }
 
 .EachComment {
-  padding: 5px 0px;
+  padding: 5px 0px 5px 120px;
+}
+
+.Sort {
+  background-color: white;
 }
 
 .LiveScorePage {
@@ -558,7 +562,7 @@ button.rec-dot {
   border: 0px;
   /* margin-left: 5px; */
   margin-right: 5px;
-  padding: 2px 8px;
+  padding: 3px 8px;
 
 }
 
@@ -706,16 +710,94 @@ button.rec-dot {
   margin-top: 6px;
   background-color: white;
   padding: 10px;
+  /* display:flex; */
 }
-.ImageInFeaturedVedios{
+
+.ImageInFeaturedVedios {
   padding: 10px 0px;
 }
 
 .ImageInFeaturedVedios img {
-  width:100%;
+  width: 100%;
   cursor: pointer;
 }
-.CricbuzzVideos{
+
+.CricbuzzVideos {
   background-color: white;
   padding: 30px;
+}
+
+.LatestNewsInRanking {
+  width: 30%;
+}
+
+.Rankings {
+  width: 70%;
+}
+
+.Ranks {
+  display: flex;
+}
+
+.RankingHeader {
+  padding: 10px;
+  border-bottom: 2px solid #E3E6E3;
+}
+
+.RankingBtn {
+  padding: 0px 0px 10px 0px;
+}
+
+.Rankings {
+  padding: 10px;
+  border-right: 2px solid #E3E6E3;
+}
+
+.Heading {
+  display: flex;
+  background-color: #E3E6E3;
+  justify-content: space-between;
+}
+
+.Position {
+  padding: 5px 20px;
+
+}
+
+.Player {
+  padding: 5px 0px;
+}
+
+.Rating {
+  padding: 5px 30px;
+}
+
+.ListOfPlayers {
+  display: flex;
+  padding: 10px 0px;
+  border-bottom: 1px solid #E3E6E3;
+}
+
+.PlayerImage {
+  width: 10%;
+  height: 50px;
+  padding: 0px 20px 0px 0px;
+  /* border: 1px solid black; */
+}
+
+.PlayerImage img {
+  /* border: 1px solid black; */
+  width: 100%;
+  height: 100%;
+}
+
+.SerialNumber {
+  padding: 15px 150px 15px 45px;
+}
+.NameOfPlayer{
+  padding: 10px;
+}
+
+.PlayerRating {
+  padding: 15px 0px 0px 225px;
 }

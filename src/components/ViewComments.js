@@ -3,6 +3,8 @@ import axios from "axios";
 import { useState } from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
+import { DownOutlined } from '@ant-design/icons';
+import { Dropdown, Space, Typography } from 'antd';
 import '../App.css'
 
 let newsId;
@@ -16,7 +18,34 @@ export default function ViewComments() {
     const params = useParams();
     newsId = params.newsId;
     const [viewComments, SetViewComments] = useState(false);
-    const { data: comments, isError, isLoading, error } = useQuery('Comments', fetchComments);
+    const [oldest, setOldest] = useState(false);
+    const { data, isError, isLoading, error, isSuccess } = useQuery('Comments', fetchComments);
+
+    const comments = data?.data.Comments;
+
+    const handleOnClickOldest = () => {
+        setOldest(true);
+        SetViewComments(true);
+    }
+
+    const handleOnClickNewest = () => {
+        setOldest(false);
+        SetViewComments(true);
+    }
+
+    const items = [
+        {
+            label: (
+                <button onClick={handleOnClickOldest} className='Sort'>Oldest</button>
+            ),
+        },
+        {
+            label: (
+                <button onClick={handleOnClickNewest} className='Sort'>Newest</button>
+            ),
+        }
+    ];
+
     if (isLoading) {
         return <h1>Loading</h1>
     }
@@ -25,23 +54,36 @@ export default function ViewComments() {
         return <h1>{error.message}</h1>
     }
 
-    const HandleOnClick = () => {
-        SetViewComments(!viewComments);
-    }
-
     return (
         <div>
-            <button onClick={HandleOnClick} className='CommentBtn'>view all comments</button>
+            view comments:
+            <Dropdown
+                menu={{
+                    items,
+                    selectable: true,
+                    defaultSelectedKeys: ['3'],
+                }}
+            >
+                <button>
+                    <Space>
+                        sort by
+                        <DownOutlined />
+                    </Space>
+                </button>
+            </Dropdown>
             {
                 viewComments &&
                 <div className="ViewComments">
-                    {comments?.data.Comments.map((comments) => {
-                        return (
-                            <div className="EachComment" key={comments.id}>
-                                {comments.text}
-                            </div>
-                        )
-                    })}
+                    {
+                        comments.sort((a, b) => { return (oldest ? a.id - b.id : b.id - a.id) })
+                            .map(({ id, text }) => {
+                                return (
+                                    <div className="EachComment" key={id}>
+                                        {text}
+                                    </div>
+                                )
+                            })
+                    }
                 </div>
             }
         </div>
