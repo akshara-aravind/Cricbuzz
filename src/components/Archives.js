@@ -1,11 +1,13 @@
 import React from "react";
-import '../App.css'
 import LiveScore from "./LiveScore";
+import '../App.css'
 
-export default function Archives() {
+const Archives = () => {
    return (
       <div>
-            <LiveScore/>
+         <LiveScore />
       </div>
    );
 }
+
+export default Archives;

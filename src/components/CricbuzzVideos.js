@@ -1,16 +1,16 @@
 import React from "react";
+import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
-import axios from "axios";
 import '../App.css'
 
 let videosId;
 
-const fetchVedio = () => {
-   return axios.get(`http://localhost:4000/videos/${videosId}`);
+const fetchVedio = async () => {
+   return await axios.get(`http://localhost:4000/videos/${videosId}`);
 }
 
-export default function CricbuzzVideos() {
+const CricbuzzVideos = () => {
    const params = useParams();
    videosId = params.videosId;
    const { data, isError, isLoading, error } = useQuery('Vedio2', fetchVedio)
@@ -36,3 +36,5 @@ export default function CricbuzzVideos() {
       </div>
    );
 }
+
+export default CricbuzzVideos;

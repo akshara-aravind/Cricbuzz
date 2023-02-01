@@ -1,8 +1,8 @@
 import React from "react";
-import '../App.css'
 import { Link } from "react-router-dom";
+import '../App.css'
 
-export default function LiveScoreData() {
+const LiveScoreData = () => {
    return (
       <div className="LiveScoreData">
          <button className="League">League</button>
@@ -54,3 +54,5 @@ export default function LiveScoreData() {
       </div>
    );
 }
+
+export default LiveScoreData;

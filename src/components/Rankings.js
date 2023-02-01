@@ -4,7 +4,7 @@ import { CaretDownOutlined } from '@ant-design/icons'
 import { Link } from 'react-router-dom'
 import '../App.css'
 
-export default function Rankings() {
+const Rankings = () => {
 
   const items = [
     {
@@ -32,3 +32,5 @@ export default function Rankings() {
     </div>
   );
 }
+
+export default Rankings;

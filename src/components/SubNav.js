@@ -1,18 +1,18 @@
 import React from 'react'
 import axios from 'axios'
 import All from './All'
-import '../App.css'
 import { useQuery } from 'react-query'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons'
 import { Button } from 'antd'
+import '../App.css'
 
-const fetchMatches = () => {
-  return axios.get('http://localhost:4000/Matches')
+const fetchMatches = async () => {
+  return await axios.get('http://localhost:4000/Matches')
 }
 
-export default function SubNav() {
+const SubNav = () => {
 
   const [toggleAll, setToggleAll] = useState(true);
   const { data, isLoading, isError, error } = useQuery('matches', fetchMatches);
@@ -50,3 +50,5 @@ export default function SubNav() {
     </div>
   );
 }
+
+export default SubNav;

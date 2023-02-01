@@ -1,11 +1,12 @@
 import React from "react";
+import LoginState from "../recoil/LoginState";
+import SubscribeState from "../recoil/SubscribeState";
 import { useEffect } from "react";
 import { useRecoilValue } from "recoil";
 import { useNavigate } from "react-router-dom";
-import LoginState from "../recoil/LoginState";
-import SubscribeState from "../recoil/SubscribeState";
 
-export default function Protected(props) {
+
+const Protected = (props) => {
     const login = useRecoilValue(LoginState);
     const subscribe = useRecoilValue(SubscribeState);
     const CricbuzzVideos = props.CricbuzzVideos
@@ -25,3 +26,5 @@ export default function Protected(props) {
         </div>
     );
 }
+
+export default Protected;

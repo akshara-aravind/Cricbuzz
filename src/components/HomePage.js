@@ -3,7 +3,7 @@ import FeaturedVideos from "./FeaturedVideos";
 import LatestNews from "./LatestNews";
 import Feed from "./Feed";
 
-export default function HomePage() {
+const HomePage = () => {
     return (
         <div className="HomePage2">
             <LatestNews />
@@ -12,3 +12,5 @@ export default function HomePage() {
         </div>
     );
 }
+
+export default HomePage;

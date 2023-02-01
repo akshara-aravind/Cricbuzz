@@ -3,7 +3,7 @@ import img from '../images/cricbuzzlogo.svg';
 import { Link } from "react-router-dom";
 import { GlobalOutlined, AndroidFilled, AppleFilled, FacebookFilled, TwitterOutlined, FilePptFilled, YoutubeFilled } from '@ant-design/icons';
 
-export default function Footer() {
+const Footer = () => {
    return (
       <div>
          <div className="Footer">
@@ -42,3 +42,5 @@ export default function Footer() {
       </div>
    );
 }
+
+export default Footer;

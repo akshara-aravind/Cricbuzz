@@ -1,27 +1,27 @@
 import React from "react";
 import axios from "axios";
+import LatestNewsWithImage from "./LatestNewsWithImage";
+import Comments from "./Comments";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import '../App.css'
-import LatestNewsWithImage from "./LatestNewsWithImage";
-import Comments from "./Comments";
 
 let newsId;
 
-const fetchNews = () => {
-   return axios.get(`http://localhost:4000/LatestNews/${newsId}`)
+const fetchNews = async () => {
+   return await axios.get(`http://localhost:4000/LatestNews/${newsId}`)
 }
 
-export default function LatestNewsInfo() {
+const LatestNewsInfo = () => {
 
    const params = useParams();
    newsId = params.newsId;
-
    const { data, isLoading, isSuccess, isError, error } = useQuery('LatestNewsInfo', fetchNews)
 
    if (isLoading) {
       return <h1>Loading</h1>
    }
+
    if (isError) {
       return <h1>{error.message}</h1>
    }
@@ -41,3 +41,5 @@ export default function LatestNewsInfo() {
       </div>
    );
 }
+
+export default LatestNewsInfo;

@@ -3,19 +3,19 @@ import axios from "axios";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 
-const fetchNews = () => {
-    return axios.get('http://localhost:4000/LatestNews')
+const fetchNews = async () => {
+    return await axios.get('http://localhost:4000/LatestNews')
 }
 
 const arr = [1, 2, 3, 4, 5, 6];
 
-export default function LatestNews() {
+const LatestNews = () => {
     const { data, isLoading, isError, error } = useQuery('LatestNews', fetchNews)
 
     if (isLoading) {
         return <h1>Loading</h1>
     }
-    
+
     if (isError) {
         return <h1>{error.message}</h1>
     }
@@ -50,3 +50,5 @@ export default function LatestNews() {
         </div>
     );
 }
+
+export default LatestNews;

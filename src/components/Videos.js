@@ -4,7 +4,7 @@ import { CaretDownOutlined } from '@ant-design/icons'
 import { Link } from 'react-router-dom'
 import '../App.css'
 
-export default function Videos() {
+const Videos = () => {
   const items = [];
   const getItems = () => {
     const arr = ['All Videos', 'Categories', 'Playlists'];
@@ -22,7 +22,7 @@ export default function Videos() {
   }
   return (
     <div >
-    {getItems()}
+      {getItems()}
       <Dropdown menu={{ items }}>
         <Link className='EachItem'>
           Videos<CaretDownOutlined />
@@ -31,3 +31,5 @@ export default function Videos() {
     </div>
   );
 }
+
+export default Videos;

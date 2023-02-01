@@ -4,10 +4,10 @@ import { CaretDownOutlined } from '@ant-design/icons'
 import { Link } from 'react-router-dom'
 import '../App.css'
 
-export default function More() {
+const More = () => {
   const items = [];
   const getItems = () => {
-  const arr = ['World Test ChampionShip', 'World Cup Super League', 'Photos','Mobile Apps','Careers','Contact Us'];
+    const arr = ['World Test ChampionShip', 'World Cup Super League', 'Photos', 'Mobile Apps', 'Careers', 'Contact Us'];
     arr.forEach(element => {
       items.push(
         {
@@ -23,7 +23,7 @@ export default function More() {
 
   return (
     <div >
-    {getItems()}
+      {getItems()}
       <Dropdown menu={{ items }}>
         <Link className='EachItem'>
           More<CaretDownOutlined />
@@ -32,3 +32,5 @@ export default function More() {
     </div>
   );
 }
+
+export default More;

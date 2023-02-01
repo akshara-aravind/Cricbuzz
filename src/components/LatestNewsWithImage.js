@@ -1,15 +1,16 @@
 import React from "react";
-import '../App.css'
 import axios from "axios";
 import { useQuery } from "react-query";
+import '../App.css'
 
 const arr = [1, 2, 3, 4, 5];
 
-const fetchLatestNews = () => {
-    return axios.get('http://localhost:4000/LatestNews')
+const fetchLatestNews = async () => {
+    return await axios.get('http://localhost:4000/LatestNews')
 }
 
-export default function LatestNewsWithImage() {
+const LatestNewsWithImage = () => {
+
     const { data: news, isError, isLoading, error } = useQuery('LatestNews', fetchLatestNews);
 
     if (isLoading) {
@@ -46,3 +47,5 @@ export default function LatestNewsWithImage() {
         </div>
     );
 }
+
+export default LatestNewsWithImage;

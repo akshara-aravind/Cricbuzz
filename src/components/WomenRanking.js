@@ -2,7 +2,7 @@ import React from "react";
 import LatestNewsWithImage from "./LatestNewsWithImage";
 import { Link } from "react-router-dom";
 
-export default function WomenRanking() {
+const WomenRanking = () => {
     const arr = [1, 2, 3, 4, 5];
     return (
         <div className="MenRanking">
@@ -30,7 +30,7 @@ export default function WomenRanking() {
                     {
                         arr.map((arr) => {
                             return (
-                                <div>
+                                <div key={arr}>
                                     <div className="ListOfPlayers">
                                         <div className="SerialNumber">{arr}</div>
                                         <div className="PlayerImage"><img src={'https://static.india.com/wp-content/uploads/2021/09/Smriti-Mandhana-PTI.jpg?impolicy=Medium_Widthonly&w=700&h=467'} alt='Not loading' /></div>
@@ -54,3 +54,5 @@ export default function WomenRanking() {
         </div>
     );
 }
+
+export default WomenRanking;

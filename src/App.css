@@ -1,5 +1,5 @@
 .CricbuzzMainPage {
-  padding: 1% 17%;
+  padding: 1% 15%;
   background: #E3E6E3;
   /* border: 1px solid black; */
   font-size: 15px;
@@ -106,8 +106,15 @@
   margin: 0px;
 }
 
+.Featured {
+  display: flex;
+  /* border: 2px solid #131413; */
+  width: 100%;
+}
+
 .FeaturedMatchdescription {
   display: flex;
+  /* border: 2px solid #131413; */
 }
 
 .FeaturedSeries {
@@ -118,9 +125,10 @@
 .FeaturedMatch {
   line-height: 30px;
   width: 200px;
-  box-shadow: 2px 9px rgb(226, 224, 224);
+  box-shadow: 2px 0px rgb(226, 224, 224);
   margin-right: 20px;
   margin-left: 10px;
+  /* border: 2px solid black;  */
 }
 
 .rec.rec-arrow {
@@ -133,9 +141,9 @@
   background-color: #009270;
 }
 
-.rec.rec-arrow:disabled {
+/* .rec.rec-arrow:disabled {
   visibility: hidden;
-}
+} */
 
 button.rec-dot {
   visibility: hidden;
@@ -166,7 +174,7 @@ button.rec-dot {
 }
 
 .All {
-  padding: 3px 0px 0px 265px;
+  padding: 3px 0px 0px 320px;
   /* margin-left: 45%; */
 }
 
@@ -454,18 +462,22 @@ button.rec-dot {
   width: 30%;
 }
 
-.comments {
+.Comments {
   display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #E3E6E3;
+  padding-bottom: 50px;
 }
 
 .PostComment {
-  width: 50%;
-  padding: 0px 0px;
+  padding: 20px 0px;
+  border-bottom: 1px solid #E3E6E3;
+
 }
 
 .TextArea {
-  width: 300px;
-  height: 100px;
+  width: 100%;
+  height: 50px;
 }
 
 .Submit {
@@ -474,11 +486,7 @@ button.rec-dot {
   color: white;
 }
 
-.ViewAllComments {
-  width: 50%;
-  padding: 0px 0px 10px 100px;
-
-}
+.ViewAllComments {}
 
 .CommentBtn {
   background-color: #009270;
@@ -488,11 +496,11 @@ button.rec-dot {
 }
 
 .ViewComments {
-  padding: 10px 0px;
+  padding: 0px 0px 0px 60px;
 }
 
 .EachComment {
-  padding: 5px 0px 5px 120px;
+  padding: 5px 0px 5px 0px;
 }
 
 .Sort {
@@ -538,8 +546,12 @@ button.rec-dot {
 }
 
 .LiveScoreSubNav {
-  padding: 0px 20px;
+  padding: 0px 20px 0px 20px;
   border-bottom: 1px solid #E3E6E3;
+}
+
+.Live {
+  padding: 0px 5px;
 }
 
 .LiveScoreSubNavBtnList {
@@ -724,7 +736,7 @@ button.rec-dot {
 
 .CricbuzzVideos {
   background-color: white;
-  padding: 30px;
+  padding: 20px 100px;
 }
 
 .LatestNewsInRanking {
@@ -781,7 +793,7 @@ button.rec-dot {
 .PlayerImage {
   width: 10%;
   height: 50px;
-  padding: 0px 20px 0px 0px;
+  padding: 0px 20px 0px 40px;
   /* border: 1px solid black; */
 }
 
@@ -794,7 +806,8 @@ button.rec-dot {
 .SerialNumber {
   padding: 15px 150px 15px 45px;
 }
-.NameOfPlayer{
+
+.NameOfPlayer {
   padding: 10px;
 }
 

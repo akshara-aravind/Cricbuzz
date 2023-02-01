@@ -3,4 +3,5 @@ import { atom } from 'recoil'
     key: 'loginEmailState',
     default: '',
 });
+
 export default LoginEmailState;

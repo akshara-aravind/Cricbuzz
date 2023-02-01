@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import '../App.css'
 
-export default function Subscription() {
+const Subscription = () => {
 
     const [open, setOpen] = useState(false);
     const login = useRecoilValue(LoginState);
@@ -39,3 +39,5 @@ export default function Subscription() {
         </div>
     );
 }
+
+export default Subscription;

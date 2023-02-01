@@ -45,7 +45,7 @@ function App() {
               <Route path='/profile' element={<Profile />} />
               <Route path='/women' element={<WomenRanking />} />
               <Route path='/men' element={<MenRanking />} />
-              <Route path='/videos/:videosId' element={< Protected CricbuzzVideos={CricbuzzVideos}/>} />
+              <Route path='/videos/:videosId' element=< Protected CricbuzzVideos={CricbuzzVideos}/> />
               <Route path='/latestnews/:newsId' element={<LatestNewsInfo />} />
             </Routes>
           </RecoilRoot>

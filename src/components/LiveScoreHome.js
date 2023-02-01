@@ -3,7 +3,7 @@ import FeaturedVideosInfo from "./FeaturedVideosInfo";
 import LiveScoreData from "./LiveScoreData";
 import '../App.css';
 
-export default function LiveScoreHome() {
+const LiveScoreHome = () => {
    return (
       <div className="LiveScoreHome">
          <div className="LiveScoreHomePart1">
@@ -16,3 +16,5 @@ export default function LiveScoreHome() {
       </div>
    );
 }
+
+export default LiveScoreHome;

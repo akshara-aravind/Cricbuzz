@@ -1,41 +1,37 @@
 import React from "react";
-import '../App.css'
 import axios from "axios";
 import LoginEmailState from "../recoil/LoginEmailState";
 import LoginState from "../recoil/LoginState";
 import { useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { useState } from "react";
-import { useQuery, useMutation , useQueryClient} from "react-query";
+import { useQuery, useMutation, useQueryClient } from "react-query";
 import { useParams } from "react-router-dom";
+import '../App.css'
 
 let newsId;
 
-const postComment = (comment) => {
-    return axios.post('http://localhost:4000/Comments', comment)
+const postComment = async (comment) => {
+    return await axios.post('http://localhost:4000/Comments', comment)
 
 }
-const fetchUsers = () => {
-    return axios.get('http://localhost:4000/Users');
+const fetchUsers = async () => {
+    return await axios.get('http://localhost:4000/Users');
 }
 
-export default function PostComment() {
-    const [text, SetText] = useState();
+const PostComment = ({ getCommentsKey }) => {
     const login = useRecoilValue(LoginState);
     const email = useRecoilValue(LoginEmailState);
     const params = useParams();
-    newsId = params.newsId;
     const LatestNewId = parseInt(newsId);
-    const navigate = useNavigate();
-    let UserId;
+    const queryClient = useQueryClient()
+    const [text, SetText] = useState();
     const { data: users, isLoading, isError, error } = useQuery('User', fetchUsers)
-    const queryClient=useQueryClient()
-    const { mutate } = useMutation(postComment,{
-        onSuccess:()=>{
-            queryClient.invalidateQueries('Comments')
-        }
-    })
-    
+    const { mutate } = useMutation(postComment)
+    const navigate = useNavigate();
+    newsId = params.newsId;
+    let UserId;
+
     if (isLoading) {
         return <h1>Loading</h1>
     }
@@ -44,21 +40,26 @@ export default function PostComment() {
         return <h1>{error.message}</h1>
     }
 
-    const handleSubmit = () => {
-        const userId = getCurrentUserId()
-        const comment = { text, userId, LatestNewId }
+    const getUserId = () => (users?.data.map((users) => {
+        if (users.email === email) {
+            UserId = users.id;
+        }
+    })
+    )
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        getUserId();
+        const comment = { text, UserId, LatestNewId }
         if (login === true)
-            mutate(comment);
+            mutate(comment, {
+                onSuccess: async () => {
+                    await queryClient.refetchQueries(getCommentsKey)
+                }
+            });
         else
             navigate('/login');
-    }
-
-    const getCurrentUserId = () => {
-        users?.data.map((users) => {
-            if (users.email === email) {
-                return users.id;
-            }
-        })
+        SetText('');
     }
 
     return (
@@ -76,4 +77,4 @@ export default function PostComment() {
     );
 }
 
-
+export default PostComment;

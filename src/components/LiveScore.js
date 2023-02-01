@@ -4,12 +4,13 @@ import LiveScoreSubNav from "./LiveScoreSubNav";
 import LiveScoreHome from "./LiveScoreHome"
 import '../App.css';
 
-export default function LiveScore() {
+const LiveScore = () => {
    return (
-      <div className="LiveScorePage">  
-          <LiveScoreHeader/>
-          <LiveScoreSubNav/>
-          <LiveScoreHome/>
+      <div className="LiveScorePage">
+         <LiveScoreHeader />
+         <LiveScoreSubNav />
+         <LiveScoreHome />
       </div>
    );
 }
+export default LiveScore;

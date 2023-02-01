@@ -1,10 +1,12 @@
 import React from "react";
 import { Home } from "./Home";
 
-export default function Main() {
+const Main = () => {
     return (
         <div>
             <Home />
         </div>
     );
 }
+
+export default Main;

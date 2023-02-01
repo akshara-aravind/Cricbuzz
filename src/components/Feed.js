@@ -3,13 +3,13 @@ import axios from "axios";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 
-const fetchFeed = () => {
-    return axios.get('http://localhost:4000/Matches')
+const fetchFeed = async () => {
+    return await axios.get('http://localhost:4000/Matches')
 }
 
 const arr = [1, 2];
 
-export default function Feed() {
+const Feed = () => {
     const { data, isError, isLoading, error } = useQuery('Feed', fetchFeed)
     if (isLoading) {
         return <h1>Loading</h1>
@@ -18,7 +18,7 @@ export default function Feed() {
         return <h1>{error.message}</h1>
     }
 
-    const displayFeed=()=> {
+    const displayFeed = () => {
         return (
             <div>
                 {
@@ -43,7 +43,9 @@ export default function Feed() {
 
     return (
         <div className="Feed">
-        {displayFeed()}
+            {displayFeed()}
         </div>
     );
 }
+
+export default Feed;

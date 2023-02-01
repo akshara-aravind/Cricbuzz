@@ -1,10 +1,12 @@
 import React from "react";
 import LiveScore from "./LiveScore";
 
-export default function Schedule() {
+const Schedule = () => {
    return (
       <div>
          <LiveScore />
       </div>
    );
 }
+
+export default Schedule;

@@ -1,13 +1,13 @@
 import React from "react";
-import { UserOutlined } from '@ant-design/icons'
-import { useRecoilState } from "recoil";
-import { useNavigate } from "react-router-dom";
 import LoginEmailState from "../recoil/LoginEmailState";
 import LoginState from "../recoil/LoginState";
+import { UserOutlined, DesktopOutlined, EuroOutlined, EditOutlined, MinusSquareOutlined, QuestionCircleOutlined, LogoutOutlined } from '@ant-design/icons'
+import { useRecoilState } from "recoil";
+import { useNavigate } from "react-router-dom";
 import '../App.css'
 
 
-export default function Profile() {
+const Profile = () => {
     const [loginEmail, SetLoginEmail] = useRecoilState(LoginEmailState);
     const [login, SetLogin] = useRecoilState(LoginState);
     const navigate = useNavigate();
@@ -24,12 +24,12 @@ export default function Profile() {
                 <div className="Title">MY ACCOUNT</div>
                 <div className="ElementsInAccount">
                     <button><UserOutlined /> My Profile</button>
-                    <button>Manage Subscription</button>
-                    <button>Redeem Coupons</button>
-                    <button>My Coupons</button>
-                    <button>Payment History</button>
-                    <button>Get Support</button>
-                    <button onClick={handleSignOut}>Sign Out</button>
+                    <button><DesktopOutlined /> Manage Subscription</button>
+                    <button><EuroOutlined /> Redeem Coupons</button>
+                    <button><EditOutlined /> My Coupons</button>
+                    <button><MinusSquareOutlined /> Payment History</button>
+                    <button><QuestionCircleOutlined /> Get Support</button>
+                    <button onClick={handleSignOut}><LogoutOutlined /> Sign Out</button>
                 </div>
             </div>
             <div className="MyProfile">
@@ -44,3 +44,5 @@ export default function Profile() {
         </div>
     );
 }
+
+export default Profile;

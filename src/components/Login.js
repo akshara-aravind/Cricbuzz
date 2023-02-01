@@ -9,11 +9,11 @@ import img from '../images/cricbuzzlogo.svg'
 import axios from 'axios';
 import '../App.css';
 
-const GetLoginDetails = () => {
-   return axios.get('http://localhost:4000/Users');
+const GetLoginDetails = async () => {
+   return await axios.get('http://localhost:4000/Users');
 }
-const PostLoginDetails = (login) => {
-   return axios.post('http://localhost:4000/Users', login)
+const PostLoginDetails = async (login) => {
+   return await axios.post('http://localhost:4000/Users', login)
 }
 
 const Login = () => {

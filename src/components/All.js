@@ -1,10 +1,10 @@
-import { useState } from "react";
 import React from "react";
 import useGetTodayMatches from "../hooks/useGetTodayMatches";
-import useGetAllMatches from "../hooks/useGetAllMatches"; 
+import useGetAllMatches from "../hooks/useGetAllMatches";
 import useGetLiveNow from "../hooks/useGetLiveNow";
+import { useState } from "react";
 
-export default function All() {
+const All = () => {
 
     const [liveState, SetLiveState] = useState(false);
     const [todayState, SetTodayState] = useState(false);
@@ -70,7 +70,7 @@ export default function All() {
         SetTodayState(false);
     }
 
-    const displayAll=()=> {
+    const displayAll = () => {
         return (
             <div>
                 {
@@ -109,3 +109,5 @@ export default function All() {
         </div>
     );
 }
+
+export default All;

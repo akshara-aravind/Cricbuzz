@@ -4,7 +4,7 @@ import { CaretDownOutlined } from '@ant-design/icons'
 import { Link } from 'react-router-dom'
 import '../App.css'
 
-export default function Teams() {
+const Teams = () => {
   const items = [];
   const getItems = () => {
     const arr = ['All Scores', 'Cricbuzz Plus', 'Latest News', 'Topics', 'Spotlight', ' Harsha Bhogle', 'Opinions', ' Specials', 'Stats & Analysis', ' Interviews', ' Live Blogs'];
@@ -32,3 +32,5 @@ export default function Teams() {
     </div>
   );
 }
+
+export default Teams;
